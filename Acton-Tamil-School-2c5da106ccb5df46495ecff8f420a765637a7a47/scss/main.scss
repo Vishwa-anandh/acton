@@ -1,0 +1,37 @@
+// When Sass server is not installed, use the following command:
+// npm install scss and sass -w scss/main.scss (from) assets/css/custom.css (to)
+
+// Alternatively, how to compile Sass file:
+// Install Live Sass Compiler extension -> Settings -> Search "Live Sass" -> Edit settings.json -> Add this code ->
+// "liveSassCompile.settings.formats": [
+//   {
+//     "format": "compressed",
+//     "extensionName": ".min.css",
+//     "savePath": "/src/assert/css"
+//   }
+// ],
+// -> Save this.
+
+// Import Bootstrap SCSS functions, variables, and mixins
+@import "../node_modules/bootstrap/scss/_functions.scss";
+@import "../node_modules/bootstrap/scss/_variables.scss";
+@import "../node_modules/bootstrap/scss/_mixins.scss";
+
+// Import custom Bootstrap API utilities
+@import "./utilities/bootstrap-api-utilities";
+
+// Custom styles
+.letterSpacing-1 {
+  letter-spacing: 1.5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.zIndex-1000 {
+  z-index: 1000;
+}
+
+// Import Bootstrap SCSS styles
+@import "../node_modules/bootstrap/scss/bootstrap";

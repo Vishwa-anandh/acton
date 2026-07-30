@@ -1,0 +1,155 @@
+// Import Bootstrap Utils first
+// otherwise our amends aren't added correctly
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/utilities";
+$utilities: map-merge(
+  $utilities,
+  (
+    "width": (
+      property: width,
+      class: w,
+      values: (
+        3: 3px,
+        10: 10px,
+      ),
+    ),
+    "height": (
+      property: height,
+      class: h,
+      values: (
+        6: 6.5rem,
+        4: 4px,
+        270: 270px,
+        130: 130px,
+        200: 200px,
+        50: 50px,
+      ),
+    ),
+
+    "font-size": (
+      rfs: true,
+      property: font-size,
+      class: fs,
+      values: (
+        18: 18px,
+        30: 30px,
+        35: 35px,
+        20: 20px,
+        22: 22px,
+        24: 24px,
+        28: 28px,
+        38: 38px,
+        40: 40px,
+      ),
+    ),
+    "font-weight": (
+      property: font-weight,
+      class: fw,
+      values: (
+        900: 900,
+      ),
+    ),
+    "color": (
+      property: color,
+      class: text,
+      values:
+        map-merge(
+          $theme-colors,
+          (
+            blue-100: #000080,
+
+            yellow-100: #fcfae0,
+          )
+        ),
+    ),
+    "background-color": (
+      property: background-color,
+      class: bg,
+      values: (
+        blue-100: #000080,
+        blue-200: #000137,
+        blue-300: #081057,
+        blue-400: #0000000d,
+        orange-100: #f8f6f3,
+      ),
+    ),
+    "margin-top": (
+      responsive: true,
+      property: margin-top,
+      class: mt,
+      values: (
+        130: 130px,
+        6: 6rem,
+        13: 13px,
+        15: 15px,
+        8: 8rem,
+        n8: -8rem,
+      ),
+    ),
+    "top": (
+      responsive: true,
+      property: top,
+
+      values: (
+        n130: -130px,
+      ),
+    ),
+
+    "margin-bottom": (
+      responsive: true,
+      property: margin-bottom,
+      class: mb,
+      values: (
+        10: 10%,
+      ),
+    ),
+    "margin-start": (
+      responsive: true,
+      property: margin-left,
+      class: ms,
+      values: (
+        n1: -1vh,
+        n40: -40rem,
+        20: 20rem,
+        215: 215px,
+        6: 4rem,
+        7: 2rem,
+        13: 13rem,
+      ),
+    ),
+    "padding": (
+      responsive: true,
+      property: padding,
+      class: p,
+      values: (
+        6: 6rem,
+      ),
+    ),
+    "padding-bottom": (
+      responsive: true,
+      property: padding-bottom,
+      class: pb,
+      values: (
+        6: 6rem,
+      ),
+    ),
+
+    "border": (
+      property: border,
+      values: (
+        contact-input: 2px solid #000000,
+      ),
+    ),
+    "rounded": (
+      property: border-radius,
+      class: rounded,
+      values: (
+        15: 15px,
+        35: 35px,
+        30: 30px,
+        22: 22px,
+        18: 18px,
+      ),
+    ),
+  )
+);
