@@ -2801,18 +2801,6 @@ a {
     transform: none;
   }
 
-  .home-main .hero-slide::after {
-    position: absolute;
-    top: 46px;
-    right: 0;
-    bottom: 46px;
-    z-index: 2;
-    width: 3px;
-    background: var(--paper);
-    content: "";
-    pointer-events: none;
-  }
-
   .home-main .hero-slide.is-active {
     flex-grow: 0;
     transform: none;
