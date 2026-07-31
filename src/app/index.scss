@@ -31,6 +31,7 @@
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
   scrollbar-color: var(--maroon) var(--paper-warm);
@@ -64,6 +65,7 @@ html::-webkit-scrollbar-thumb:active {
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
@@ -633,53 +635,6 @@ a {
   background: var(--white);
 }
 
-.hero-carousel-toggle {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 50%;
-  background: rgba(18, 12, 12, 0.48);
-  color: var(--white);
-  font-size: 0.95rem;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(4px);
-  backdrop-filter: blur(12px);
-  transition:
-    background-color 180ms ease,
-    opacity 180ms ease,
-    transform 180ms ease;
-}
-
-.hero-carousel:hover .hero-carousel-toggle,
-.hero-carousel:focus-within .hero-carousel-toggle,
-.hero-carousel-toggle:focus-visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-.hero-carousel-toggle:hover {
-  background: rgba(18, 12, 12, 0.68);
-  transform: scale(1.04);
-}
-
-.hero-carousel-toggle:disabled {
-  cursor: not-allowed;
-  opacity: 0.58;
-}
-
-@media (hover: none) {
-  .hero-carousel-toggle {
-    opacity: 1;
-    pointer-events: auto;
-    transform: none;
-  }
-}
-
 /* Editorial photo-strip hero */
 
 .home-main .hero {
@@ -759,6 +714,19 @@ a {
   border-radius: 0;
   background: transparent;
   box-shadow: none;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.home-main .hero-image-wrap.is-dragging {
+  cursor: grabbing;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-main .hero-image-wrap {
+    cursor: default;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -793,22 +761,10 @@ a {
   display: flex;
   width: var(--hero-track-width);
   height: 100%;
-  animation: hero-ribbon-scroll 128s linear infinite;
+  /* Position is driven every frame from CarouselImage's requestAnimationFrame
+     loop (constant left drift blended with the mouse-follow nudge), not a
+     CSS keyframe, so pausing and the mouse offset can share one transform. */
   will-change: transform;
-}
-
-.home-main .hero-slide-track.is-paused {
-  animation-play-state: paused;
-}
-
-@keyframes hero-ribbon-scroll {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
 }
 
 .home-main .hero-slide {
@@ -848,6 +804,7 @@ a {
   height: 100%;
   filter: saturate(0.88) brightness(0.94);
   object-fit: cover;
+  -webkit-user-drag: none;
   transition:
     filter 300ms ease,
     transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -857,13 +814,6 @@ a {
 .home-main .hero-slide.is-active img {
   filter: saturate(1) brightness(1);
   transform: scale(1.025);
-}
-
-.home-main .hero-carousel-toggle {
-  position: absolute;
-  top: 46px;
-  right: 16px;
-  z-index: 6;
 }
 
 .hero-footer {
@@ -884,7 +834,7 @@ a {
 .hero-active-copy p {
   margin: 4px 0 0;
   color: var(--ink-soft);
-  font-size: 0.88rem;
+  font-size: 0.98rem;
   line-height: 1.55;
 }
 
@@ -2868,11 +2818,6 @@ a {
     transform: none;
   }
 
-  .home-main .hero-carousel-toggle {
-    top: 34px;
-    right: 12px;
-  }
-
   .hero-footer {
     width: var(--shell);
     margin-top: 16px;
@@ -2889,7 +2834,7 @@ a {
   .hero-active-copy p {
     max-width: 330px;
     margin-inline: auto;
-    font-size: 0.84rem;
+    font-size: 0.92rem;
     line-height: 1.5;
   }
 
@@ -3161,8 +3106,7 @@ a {
   }
 
   .gallery-item > span {
-    opacity: 1;
-    transform: none;
+    display: none;
   }
 
   .event-cta {
