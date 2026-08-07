@@ -20,7 +20,7 @@ export const FAQList = [
   {
     Question: "When do classes begin at Acton Tamil School?",
     Answer:
-      "Classes at Acton Tamil School begin in September. The 2026–27 school year begins September 13, 2026.",
+      "Classes at Acton Tamil School begin in September for every academic year (Sep 13th 2026-27 for this year).",
   },
 
   {
@@ -37,9 +37,7 @@ export const FAQList = [
     Question: "When can I register my child to Acton Tamil School?",
     Answer: (
       <>
-        Registration for all (both new & currently enrolled) students usually
-        opens in late May or early June for the upcoming academic year.
-        Registration is currently open for 2026–27.{" "}
+        Registration for all (both new & currently enrolled) students usually opens up in May End/June Beginning for the upcoming academic year.Registration is currently open for 2026-27.{" "}
         <a
           href="https://www.catamilacademy.org/cta/login.aspx?ReturnUrl=%2fcta"
           target="_blank"
@@ -53,7 +51,7 @@ export const FAQList = [
   {
     Question: "From what age can my child attend Acton Tamil School?",
     Answer:
-      "Children should be at least 3 years old by August 31 to join for the upcoming academic year.",
+      "Children should have completed 3 years of age as of 31st August to join for the upcoming Academic year.",
   },
   {
     Question: "Can kids from other towns join Acton Tamil School?",
@@ -64,16 +62,14 @@ export const FAQList = [
     Question: "Where are classes held?",
     Answer: (
       <>
-        Classes are held at the Acton-Boxborough Regional High School campus.
-        The campus offers ample classrooms and parking for our growing school
-        community. <br />
+        Acton Tamil School classes will be held in Luther Conant School campus, Acton MA. This is a great campus with ample classrooms and parking spaces for our Tamil school to grow into a thriving community in the future!
         <br />
-        The address is 36 Charter Road, Acton, MA 01720.
+        <br />
+        The address is Acton Boxbrough Regional High School,36 Charter Rd,Acton,MA 01720
         <br />
         <br />
         <span className={`text-primary`}>
-          We conduct online classes when needed, such as during severe weather.
-          Parents will be notified promptly whenever the class format changes.
+          We conduct online classes if there are issues like Covid-19 or snow days. We will promptly communicate to the parents when there is a change.
         </span>
       </>
     ),
@@ -81,7 +77,7 @@ export const FAQList = [
   {
     Question: "Is there any tuition for Acton Tamil School?",
     Answer:
-      "Acton Tamil School has an annual tuition of $300 per student, due upon registration.",
+      "Acton Tamil School has an annual tuition of $300 per student due upon registration.",
   },
   {
     Question: "How do I make payment?",
@@ -129,7 +125,7 @@ export const FAQList = [
   {
     Question: "Do you offer classes for kids at different grades?",
     Answer:
-      "We offer classes from preschool to Grade 12. Children can start at any eligible age.",
+      "We offer classes from preschool to Grade 12. Children can start at any age.",
   },
   {
     Question: "If my child joins, what ATS grade will he/she be in?",
@@ -161,7 +157,7 @@ export const FAQList = [
     Question:
       "Apart from regular curriculum learning, will there be any events?",
     Answer:
-      "Yes. We organize social and cultural events that help students experience and celebrate Tamil heritage.",
+      "Yes. We organize social and cultural events to imbibe Tamilian legacy. These are done by the students, for the students.",
   },
   {
     Question: "Can my child start in the middle of the school year?",
@@ -202,6 +198,6 @@ export const FAQList = [
     Question:
       "How do I find out about school closing/cancellations due to adverse weather conditions?",
     Answer:
-      "Please check our website for school-closing information. Acton Tamil School follows the Acton-Boxborough Public Schools inclement-weather policy and will also notify parents by email.",
+      "To learn about school closing please check our website. Acton Tamil School will follow Acton Boxborough Public School system inclement weather policy. ATS will also let the parents know about school closing via email.",
   },
 ];

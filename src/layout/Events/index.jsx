@@ -129,10 +129,12 @@ const EventsLayout = () => {
                 <span className="community-theme-number" aria-hidden="true">
                   0{index + 1}
                 </span>
-                <span className="community-theme-icon" aria-hidden="true">
-                  <i className={`bi ${theme.icon}`} />
-                </span>
-                <h3>{theme.title}</h3>
+                <h3>
+                  {theme.title}
+                  <span className="community-theme-icon" aria-hidden="true">
+                    <i className={`bi ${theme.icon}`} />
+                  </span>
+                </h3>
                 <p>{theme.copy}</p>
               </article>
             ))}

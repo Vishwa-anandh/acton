@@ -1,6 +1,6 @@
 import Counts from "../../components/Counts";
-import communityImage from "../../assets/images/Action-About-imag.png";
-import cultureImage from "../../assets/images/mainimage.jpg";
+import communityImage from "../../assets/images/Action-About-imag.webp";
+import cultureImage from "../../assets/images/mainimage.webp";
 
 const values = [
   {
@@ -41,7 +41,7 @@ const AboutLayout = () => {
         <Counts />
       </section>
 
-      <section className="section section-soft">
+      <section className="section section-soft about-story-section">
         <div className="section-shell about-story">
           <div className="about-story-copy">
             <p className="eyebrow">Why we are here</p>
@@ -75,7 +75,7 @@ const AboutLayout = () => {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section guides-section">
         <div className="section-shell">
           <div className="section-heading section-heading-centered">
             <p className="eyebrow">What guides us</p>
@@ -84,10 +84,12 @@ const AboutLayout = () => {
           <div className="value-grid">
             {values.map((value) => (
               <article className="value-card" key={value.title}>
-                <span className="value-icon" aria-hidden="true">
-                  <i className={`bi ${value.icon}`} />
-                </span>
-                <h3>{value.title}</h3>
+                <h3>
+                  {value.title}
+                  <span className="value-icon" aria-hidden="true">
+                    <i className={`bi ${value.icon}`} />
+                  </span>
+                </h3>
                 <p>{value.copy}</p>
               </article>
             ))}

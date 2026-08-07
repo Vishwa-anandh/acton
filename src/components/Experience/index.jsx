@@ -32,10 +32,12 @@ const Experience = () => {
           {features.map((feature, index) => (
             <article className="feature-card" key={feature.title}>
               <span className={`feature-number`}>0{index + 1}</span>
-              <span className="feature-icon" aria-hidden="true">
-                <i className={`bi ${feature.icon}`} />
-              </span>
-              <h3>{feature.title}</h3>
+              <h3>
+                {feature.title}
+                <span className="feature-icon" aria-hidden="true">
+                  <i className={`bi ${feature.icon}`} />
+                </span>
+              </h3>
               <p>{feature.copy}</p>
             </article>
           ))}

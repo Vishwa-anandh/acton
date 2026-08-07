@@ -5,6 +5,7 @@ const previewCount = 7;
 
 const FAQuestion = () => {
   const [showAll, setShowAll] = useState(false);
+  const [openIndex, setOpenIndex] = useState(0);
   const visibleQuestions = showAll
     ? FAQList
     : FAQList.slice(0, previewCount);
@@ -18,16 +19,23 @@ const FAQuestion = () => {
           Find quick details about classes, registration, tuition, placement,
           and volunteering.
         </p>
-        <a className="text-link" href="mailto:actontamilschool@gmail.com">
+        {/* <a className="text-link" href="mailto:actontamilschool@gmail.com">
           Still have a question?
           <i className="bi bi-arrow-right" aria-hidden="true" />
-        </a>
+        </a> */}
       </div>
       <div>
         <div className="faq-accordion">
           {visibleQuestions.map((value, index) => (
-            <details open={index === 0 ? true : undefined} key={value.Question}>
-              <summary>{value.Question}</summary>
+            <details open={openIndex === index} key={value.Question}>
+              <summary
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpenIndex(openIndex === index ? -1 : index);
+                }}
+              >
+                {value.Question}
+              </summary>
               <div className="faq-answer">{value.Answer}</div>
             </details>
           ))}
