@@ -3501,8 +3501,8 @@ a {
 .anniversary-description { max-width: 540px; color: var(--ink-soft); font-size: 16px; line-height: 1.9; margin-bottom: 28px; }
 .anniversary-signoff { display: flex; align-items: center; gap: 12px; margin: 30px 0 0; color: var(--ink-muted); font-size: 9px; letter-spacing: .08em; }
 .anniversary-signoff span { color: #ad7d28; }
-.anniversary-artwork { position: relative; padding: 24px; text-align: center; isolation: isolate; }
-.anniversary-artwork img { position: relative; display: block; width: 100%; height: auto; border: 1px solid #ead9b5; border-radius: 50% 50% 24px 24px; box-shadow: 0 20px 55px #7e56201a; }
+.anniversary-artwork { position: relative; text-align: center; isolation: isolate; }
+.anniversary-artwork img { position: relative; display: block; width: 100%; height: auto; }
 .anniversary-orbit { position: absolute; inset: 4px 4px 35px; border: 1px solid #d8b570; border-radius: 50% 50% 28px 28px; transform: rotate(-6deg); z-index: -1; }
 .anniversary-art-caption { display: block; margin-top: 24px; color: var(--ink-soft); font-family: Georgia, serif; font-style: italic; font-size: 14px; }
 .anniversary-stories { padding: clamp(24px, 4vw, 60px); background: var(--paper); border-top: 1px solid #e8dccb; scroll-margin-top: 100px; }
@@ -3602,12 +3602,6 @@ a {
 .anniversary .memory-card { box-shadow: 0 6px 18px rgba(92, 57, 29, .04); }
 @media (max-width: 720px) { .stories-three-scene { opacity: .5; } }
 
-/* Minimal anniversary artwork: no rotating or offset decoration. */
-.anniversary .anniversary-artwork { padding: 12px; }
-.anniversary .anniversary-artwork img {
-  width: 100%;
-  border-radius: 20px;
-  border: 1px solid #e9e1d5;
-  box-shadow: 0 10px 28px rgba(72, 48, 27, .05);
-}
+/* Minimal anniversary artwork: no rotating or offset decoration, no card frame. */
+.anniversary .anniversary-artwork img { width: 100%; }
 .anniversary .anniversary-art-caption { margin-top: 20px; padding-top: 0; }
