@@ -1,12 +1,23 @@
 import { useEffect, useState, useRef } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../../assets/images/logoweb.png";
+import anniversaryLogo from "../../assets/images/anniversary-10th.png";
+import { fireConfettiBurst } from "../../utils/confettiBurst";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const headerRef = useRef(null);
+  const brandRef = useRef(null);
+
+  const handleLogoHover = () => {
+    const rect = brandRef.current?.getBoundingClientRect();
+    fireConfettiBurst(
+      rect ? rect.left + rect.width / 2 : undefined,
+      rect ? rect.bottom : undefined
+    );
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 16);
@@ -40,8 +51,21 @@ const Header = () => {
     <header ref={headerRef} className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
       <div className="nav-shell">
         <div className="header-brand-group">
-        <Link to="/" className="brand" aria-label="Acton Tamil School home">
-          <img src={logo} alt="" className="brand-logo" />
+        <Link
+          to="/"
+          className="brand"
+          aria-label="Acton Tamil School home"
+          ref={brandRef}
+          onMouseEnter={handleLogoHover}
+        >
+          <span className="brand-logo brand-logo-wrap">
+            <img src={logo} alt="" className="brand-logo-img brand-logo-default" />
+            <img
+              src={anniversaryLogo}
+              alt=""
+              className="brand-logo-img brand-logo-hover"
+            />
+          </span>
           <span className="brand-copy">
             <strong>Acton Tamil School</strong>
             <span lang="ta">ஆக்டன் தமிழ்ப் பள்ளி</span>

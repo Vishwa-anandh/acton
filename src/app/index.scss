@@ -339,6 +339,28 @@ a {
   object-fit: contain;
 }
 
+.brand-logo-wrap {
+  position: relative;
+  display: inline-block;
+}
+.brand-logo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity .3s ease, transform .3s ease;
+}
+.brand-logo-default { opacity: 1; transform: scale(1); }
+.brand-logo-hover { opacity: 0; transform: scale(.82); }
+.brand:hover .brand-logo-default,
+.brand:focus-visible .brand-logo-default { opacity: 0; transform: scale(1.06); }
+.brand:hover .brand-logo-hover,
+.brand:focus-visible .brand-logo-hover { opacity: 1; transform: scale(1); }
+@media (prefers-reduced-motion: reduce) {
+  .brand-logo-img { transition: none; }
+}
+
 .brand-copy {
   display: grid;
   gap: 1px;
@@ -3658,6 +3680,13 @@ a {
   bottom: -140px;
   border-radius: 50% 50% 50% 50% / 58% 58% 42% 42%;
   opacity: .92;
+  background:
+    radial-gradient(circle at 30% 24%, color-mix(in srgb, var(--balloon-color) 45%, white 55%) 0%, transparent 42%),
+    radial-gradient(circle at 68% 78%, color-mix(in srgb, var(--balloon-color) 88%, black 12%) 0%, transparent 55%),
+    var(--balloon-color);
+  box-shadow:
+    inset -8px -14px 18px color-mix(in srgb, var(--balloon-color) 70%, black 30%),
+    inset 6px 8px 12px rgba(255, 255, 255, .45);
   animation-name: intro-balloon-float;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
@@ -3666,19 +3695,19 @@ a {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -7px;
-  width: 7px;
-  height: 7px;
-  background: inherit;
+  bottom: -8px;
+  width: 9px;
+  height: 9px;
+  background: var(--balloon-color);
   transform: translateX(-50%) rotate(45deg);
 }
 .intro-balloon::after {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -64px;
+  bottom: -70px;
   width: 1px;
-  height: 64px;
+  height: 70px;
   background: var(--line);
 }
 @keyframes intro-balloon-float {

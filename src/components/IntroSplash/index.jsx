@@ -26,15 +26,18 @@ function createConfettiPiece(width) {
 }
 
 function createBalloons() {
-  return Array.from({ length: BALLOON_COUNT }, (_, index) => ({
-    id: index,
-    left: 4 + Math.random() * 92,
-    color: BALLOON_COLORS[index % BALLOON_COLORS.length],
-    delay: Math.random() * 1.2,
-    duration: 5 + Math.random() * 2,
-    drift: Math.round((Math.random() - 0.5) * 160),
-    width: Math.round(38 + Math.random() * 20),
-  }));
+  return Array.from({ length: BALLOON_COUNT }, (_, index) => {
+    const onLeft = index % 2 === 0;
+    return {
+      id: index,
+      left: onLeft ? 2 + Math.random() * 16 : 80 + Math.random() * 17,
+      color: BALLOON_COLORS[index % BALLOON_COLORS.length],
+      delay: Math.random() * 1.2,
+      duration: 5 + Math.random() * 2,
+      drift: Math.round((Math.random() - 0.5) * 40),
+      width: Math.round(55 + Math.random() * 80),
+    };
+  });
 }
 
 function createFloatingWords() {
@@ -176,12 +179,12 @@ export default function IntroSplash() {
             className="intro-balloon"
             style={{
               left: `${balloon.left}%`,
-              background: balloon.color,
               width: `${balloon.width}px`,
               height: `${Math.round(balloon.width * 1.25)}px`,
               animationDelay: `${balloon.delay}s`,
               animationDuration: `${balloon.duration}s`,
               "--drift": `${balloon.drift}px`,
+              "--balloon-color": balloon.color,
             }}
           />
         ))}
