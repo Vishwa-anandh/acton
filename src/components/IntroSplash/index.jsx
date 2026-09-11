@@ -25,41 +25,75 @@ function createConfettiPiece(width) {
   };
 }
 
-function createBalloons() {
-  return Array.from({ length: BALLOON_COUNT }, (_, index) => {
+function shuffle(list) {
+  const copy = [...list];
+  for (let i = copy.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+// Evenly slices the vertical space into `count` bands (with a small top/bottom
+// margin) and jitters within each band, so items sharing a side never land in
+// the same stretch of height and end up overlapping.
+function assignTopSlots(count) {
+  const margin = 6;
+  const usable = 100 - margin * 2;
+  const slotHeight = usable / count;
+  const slots = Array.from(
+    { length: count },
+    (_, i) => margin + i * slotHeight + Math.random() * slotHeight * 0.5
+  );
+  return shuffle(slots);
+}
+
+function createBalloonsAndWords() {
+  const leftBalloonCount = Math.ceil(BALLOON_COUNT / 2);
+  const rightBalloonCount = BALLOON_COUNT - leftBalloonCount;
+  const leftWordCount = Math.ceil(FLOATING_WORD_COUNT / 2);
+  const rightWordCount = FLOATING_WORD_COUNT - leftWordCount;
+
+  const leftSlots = assignTopSlots(leftBalloonCount + leftWordCount);
+  const rightSlots = assignTopSlots(rightBalloonCount + rightWordCount);
+  let nextLeft = 0;
+  let nextRight = 0;
+
+  const balloons = Array.from({ length: BALLOON_COUNT }, (_, index) => {
     const onLeft = index % 2 === 0;
     return {
       id: index,
-      left: onLeft ? 2 + Math.random() * 16 : 80 + Math.random() * 17,
+      left: onLeft ? 2 + Math.random() * 13 : 85 + Math.random() * 13,
+      top: onLeft ? leftSlots[nextLeft++] : rightSlots[nextRight++],
       color: BALLOON_COLORS[index % BALLOON_COLORS.length],
       delay: Math.random() * 1.2,
       duration: 5 + Math.random() * 2,
-      drift: Math.round((Math.random() - 0.5) * 40),
+      drift: Math.round((Math.random() - 0.5) * 26),
       width: Math.round(55 + Math.random() * 80),
     };
   });
-}
 
-function createFloatingWords() {
-  return Array.from({ length: FLOATING_WORD_COUNT }, (_, index) => {
+  const floatingWords = Array.from({ length: FLOATING_WORD_COUNT }, (_, index) => {
     const onLeft = index % 2 === 0;
     return {
       id: index,
       text: FLOATING_TAMIL_WORDS[index % FLOATING_TAMIL_WORDS.length],
-      left: onLeft ? 2 + Math.random() * 16 : 80 + Math.random() * 17,
+      left: onLeft ? 2 + Math.random() * 13 : 85 + Math.random() * 13,
+      top: onLeft ? leftSlots[nextLeft++] : rightSlots[nextRight++],
       delay: Math.random() * 1.8,
       duration: 5.5 + Math.random() * 2,
-      drift: Math.round((Math.random() - 0.5) * 40),
+      drift: Math.round((Math.random() - 0.5) * 26),
       color: onLeft ? "#8f1538" : "#1c3766",
     };
   });
+
+  return { balloons, floatingWords };
 }
 
 export default function IntroSplash() {
   const [visible, setVisible] = useState(false);
   const [closing, setClosing] = useState(false);
-  const [balloons] = useState(createBalloons);
-  const [floatingWords] = useState(createFloatingWords);
+  const [{ balloons, floatingWords }] = useState(createBalloonsAndWords);
   const canvasRef = useRef(null);
   const skipRef = useRef(null);
   const animationRef = useRef(null);
@@ -179,6 +213,7 @@ export default function IntroSplash() {
             className="intro-balloon"
             style={{
               left: `${balloon.left}%`,
+              top: `${balloon.top}%`,
               width: `${balloon.width}px`,
               height: `${Math.round(balloon.width * 1.25)}px`,
               animationDelay: `${balloon.delay}s`,
@@ -195,6 +230,7 @@ export default function IntroSplash() {
             lang="ta"
             style={{
               left: `${word.left}%`,
+              top: `${word.top}%`,
               color: word.color,
               animationDelay: `${word.delay}s`,
               animationDuration: `${word.duration}s`,

@@ -3674,10 +3674,9 @@ a {
 }
 .intro-splash-skip:hover, .intro-splash-skip:focus-visible { background: var(--paper-soft); }
 
-/* Balloons drift up from below the fold, swaying and fading near the top. */
+/* Balloons scatter across the full height, drifting and swaying gently in place. */
 .intro-balloon {
   position: absolute;
-  bottom: -140px;
   border-radius: 50% 50% 50% 50% / 58% 58% 42% 42%;
   opacity: .92;
   background:
@@ -3713,13 +3712,12 @@ a {
 @keyframes intro-balloon-float {
   0% { transform: translateY(0) translateX(0) rotate(-4deg); opacity: .92; }
   85% { opacity: .9; }
-  100% { transform: translateY(-118vh) translateX(var(--drift, 20px)) rotate(4deg); opacity: 0; }
+  100% { transform: translateY(-38vh) translateX(var(--drift, 20px)) rotate(4deg); opacity: 0; }
 }
 
-/* A handful of Tamil words drifting up alongside the balloons. */
+/* A handful of Tamil words scattered at varied heights, drifting gently alongside the balloons. */
 .intro-floating-word {
   position: absolute;
-  bottom: -40px;
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: clamp(16px, 2.4vw, 22px);
@@ -3733,7 +3731,7 @@ a {
   0% { transform: translateY(0) translateX(0); opacity: 0; }
   12% { opacity: .8; }
   85% { opacity: .7; }
-  100% { transform: translateY(-105vh) translateX(var(--drift, 20px)); opacity: 0; }
+  100% { transform: translateY(-32vh) translateX(var(--drift, 20px)); opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

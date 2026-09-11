@@ -1,5 +1,5 @@
 import { useState } from "react";
-import anniversaryLogo from "../../assets/images/anniversary-10th.png";
+import anniversaryLogo from "../../assets/images/anniversary-10th-3d.webp";
 
 const stories = [
   { role: "Student", title: "A conversation with Paati", text: "The first time I spoke to my grandmother in Tamil without asking for help, our call lasted a little longer." },
@@ -31,7 +31,7 @@ export default function Anniversary() {
           <p className="anniversary-signoff">OUR LANGUAGE <span>✦</span> OUR ROOTS <span>✦</span> OUR FUTURE</p>
         </div>
         <div className="anniversary-artwork">
-          <img src={anniversaryLogo} alt="Acton Tamil School 10th anniversary emblem" width="1472" height="1472" loading="lazy" decoding="async" />
+          <img src={anniversaryLogo} alt="Acton Tamil School 10th anniversary emblem" width="1600" height="1600" loading="lazy" decoding="async" />
           <span className="anniversary-art-caption">A milestone made possible by our community.</span>
         </div>
       </div>
