@@ -51,15 +51,13 @@ const Offerings = () => {
 
           <div className="learning-pathways">
             {learningSteps.map((step, index) => (
-              <article className="learning-pathway" key={step.label}>
-                <div className="learning-pathway-top">
-                  <span className="learning-pathway-number">
-                    0{index + 1}
-                  </span>
-                </div>
+              <article className="feature-card" key={step.label}>
+                <span className="feature-number">
+                  0{index + 1}
+                </span>
                 <h3>
                   {step.label}
-                  <span className="learning-pathway-icon" aria-hidden="true">
+                  <span className="feature-icon" aria-hidden="true">
                     <i className={`bi ${step.icon}`} />
                   </span>
                 </h3>

@@ -125,13 +125,13 @@ const EventsLayout = () => {
 
           <div className="community-themes">
             {gatheringThemes.map((theme, index) => (
-              <article className="community-theme" key={theme.title}>
-                <span className="community-theme-number" aria-hidden="true">
+              <article className="feature-card" key={theme.title}>
+                <span className="feature-number" aria-hidden="true">
                   0{index + 1}
                 </span>
                 <h3>
                   {theme.title}
-                  <span className="community-theme-icon" aria-hidden="true">
+                  <span className="feature-icon" aria-hidden="true">
                     <i className={`bi ${theme.icon}`} />
                   </span>
                 </h3>

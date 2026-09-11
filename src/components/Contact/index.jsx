@@ -9,8 +9,8 @@ const contactItems = [
   {
     icon: "bi-telephone",
     label: "Call us",
-    value: "978-393-1772",
-    href: "tel:978-393-1772",
+    value: "+1 978-393-1772",
+    href: "tel:+1-978-393-1772",
   },
   {
     icon: "bi-envelope",

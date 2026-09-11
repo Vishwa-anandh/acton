@@ -28,7 +28,7 @@ const Footer = () => {
 
         <div className="footer-column">
           <h2>Get in touch</h2>
-          <a href="tel:978-393-1772">978-393-1772</a>
+          <a href="tel:+1-978-393-1772">+1 978-393-1772</a>
           <a href="mailto:actontamilschool@gmail.com">
             actontamilschool@gmail.com
           </a>

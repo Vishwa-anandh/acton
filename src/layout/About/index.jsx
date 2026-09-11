@@ -82,11 +82,12 @@ const AboutLayout = () => {
             <h2>Strong roots. Open minds. Joyful learning.</h2>
           </div>
           <div className="value-grid">
-            {values.map((value) => (
-              <article className="value-card" key={value.title}>
+            {values.map((value, index) => (
+              <article className="feature-card" key={value.title}>
+                <span className="feature-number">0{index + 1}</span>
                 <h3>
                   {value.title}
-                  <span className="value-icon" aria-hidden="true">
+                  <span className="feature-icon" aria-hidden="true">
                     <i className={`bi ${value.icon}`} />
                   </span>
                 </h3>

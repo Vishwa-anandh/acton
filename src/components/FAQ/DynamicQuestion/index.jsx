@@ -116,8 +116,8 @@ export const FAQList = [
           actontamilschool@gmail.com
         </a>{" "}
         or phone{" "}
-        <a href="tel:978-393-1772">
-          978-393-1772.
+        <a href="tel:+1-978-393-1772">
+          +1 978-393-1772.
         </a>{" "}
       </>
     ),
@@ -147,8 +147,8 @@ export const FAQList = [
           actontamilschool@gmail.com
         </a>{" "}
         or phone{" "}
-        <a href="tel:978-393-1772">
-          978-393-1772.
+        <a href="tel:+1-978-393-1772">
+          +1 978-393-1772.
         </a>{" "}
       </>
     ),

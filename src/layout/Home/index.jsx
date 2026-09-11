@@ -5,15 +5,19 @@ import Experience from "../../components/Experience";
 import Offerings from "../../components/Offerings";
 import ContactUs from "../../components/Contact";
 import CarouselImage from "../../components/CarouselImage";
+import Anniversary from "../../components/Anniversary";
 
 const HomeLayout = () => {
   const location = useLocation();
   const faqRef = useRef(null);
+  const anniversaryRef = useRef(null);
   const contactRef = useRef(null);
 
   useEffect(() => {
     const target =
-      location.pathname === "/faq" || location.hash === "#faq"
+      location.hash === "#anniversary"
+        ? anniversaryRef.current
+        : location.pathname === "/faq" || location.hash === "#faq"
         ? faqRef.current
         : location.pathname === "/contact" || location.hash === "#contact"
           ? contactRef.current
@@ -31,6 +35,8 @@ const HomeLayout = () => {
   return (
     <main id="main-content" className="home-main">
       <CarouselImage />
+      <div ref={anniversaryRef} className="anniversary-anchor"><Anniversary /></div>
+      <Experience />
       <aside
         className="landing-notice section-shell"
         aria-label="Enrollment update"
@@ -50,7 +56,6 @@ const HomeLayout = () => {
           <i className="bi bi-arrow-up-right" aria-hidden="true" />
         </a>
       </aside>
-      <Experience />
       <Offerings />
       <section ref={faqRef} id="faq" className="section section-soft anchor-section">
         <FAQ />

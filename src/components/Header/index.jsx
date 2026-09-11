@@ -39,6 +39,7 @@ const Header = () => {
   return (
     <header ref={headerRef} className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
       <div className="nav-shell">
+        <div className="header-brand-group">
         <Link to="/" className="brand" aria-label="Acton Tamil School home">
           <img src={logo} alt="" className="brand-logo" />
           <span className="brand-copy">
@@ -46,6 +47,11 @@ const Header = () => {
             <span lang="ta">ஆக்டன் தமிழ்ப் பள்ளி</span>
           </span>
         </Link>
+        <Link className="anniversary-badge" to="/#anniversary" onClick={() => setMenuOpen(false)}>
+          <span aria-hidden="true">✦</span> <span className="anniversary-prefix">Celebrating</span> 10 Years
+          <i className="bi bi-arrow-down-right" aria-hidden="true" />
+        </Link>
+        </div>
 
         <button
           type="button"
