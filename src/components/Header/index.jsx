@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import logo from "../../assets/images/anniversary-10th.png";
+import logo from "../../assets/images/logoweb.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
