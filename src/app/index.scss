@@ -353,10 +353,8 @@ a {
 }
 .brand-logo-default { opacity: 1; transform: scale(1); }
 .brand-logo-hover { opacity: 0; transform: scale(.82); }
-.brand:hover .brand-logo-default,
-.brand:focus-visible .brand-logo-default { opacity: 0; transform: scale(1.06); }
-.brand:hover .brand-logo-hover,
-.brand:focus-visible .brand-logo-hover { opacity: 1; transform: scale(1); }
+.brand-logo-wrap.is-anniversary .brand-logo-default { opacity: 0; transform: scale(1.06); }
+.brand-logo-wrap.is-anniversary .brand-logo-hover { opacity: 1; transform: scale(1); }
 @media (prefers-reduced-motion: reduce) {
   .brand-logo-img { transition: none; }
 }
@@ -3627,114 +3625,3 @@ a {
 /* Minimal anniversary artwork: no rotating or offset decoration, no card frame. */
 .anniversary .anniversary-artwork img { width: 100%; }
 .anniversary .anniversary-art-caption { margin-top: 20px; padding-top: 0; }
-
-/* One-time entry celebration: confetti + balloons + emblem reveal on white, gone once dismissed. */
-.intro-splash {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: var(--white);
-  opacity: 1;
-  transition: opacity .5s ease;
-}
-.intro-splash.is-closing { opacity: 0; }
-.intro-splash-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-.intro-splash-decor { position: absolute; inset: 0; overflow: hidden; }
-.intro-splash-content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 24px;
-  max-width: 560px;
-}
-.intro-splash-logo { width: min(300px, 60vw); height: auto; margin-bottom: 28px; filter: drop-shadow(0 12px 30px rgba(68, 42, 23, .18)); }
-.intro-splash-heading { color: var(--ink); font-size: clamp(28px, 5.2vw, 44px); font-weight: 750; letter-spacing: -.02em; margin: 0 0 12px; }
-.intro-splash-tamil { color: var(--maroon); font-size: clamp(17px, 2.6vw, 23px); margin: 0; }
-.intro-splash-skip {
-  margin-top: 32px;
-  padding: 10px 20px;
-  min-height: 44px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--ink);
-  font-size: 13px;
-  letter-spacing: .04em;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.intro-splash-skip:hover, .intro-splash-skip:focus-visible { background: var(--paper-soft); }
-
-/* Balloons scatter across the full height, drifting and swaying gently in place. */
-.intro-balloon {
-  position: absolute;
-  border-radius: 50% 50% 50% 50% / 58% 58% 42% 42%;
-  opacity: .92;
-  background:
-    radial-gradient(circle at 30% 24%, color-mix(in srgb, var(--balloon-color) 45%, white 55%) 0%, transparent 42%),
-    radial-gradient(circle at 68% 78%, color-mix(in srgb, var(--balloon-color) 88%, black 12%) 0%, transparent 55%),
-    var(--balloon-color);
-  box-shadow:
-    inset -8px -14px 18px color-mix(in srgb, var(--balloon-color) 70%, black 30%),
-    inset 6px 8px 12px rgba(255, 255, 255, .45);
-  animation-name: intro-balloon-float;
-  animation-timing-function: ease-in;
-  animation-fill-mode: forwards;
-}
-.intro-balloon::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -8px;
-  width: 9px;
-  height: 9px;
-  background: var(--balloon-color);
-  transform: translateX(-50%) rotate(45deg);
-}
-.intro-balloon::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -70px;
-  width: 1px;
-  height: 70px;
-  background: var(--line);
-}
-@keyframes intro-balloon-float {
-  0% { transform: translateY(0) translateX(0) rotate(-4deg); opacity: .92; }
-  85% { opacity: .9; }
-  100% { transform: translateY(-38vh) translateX(var(--drift, 20px)) rotate(4deg); opacity: 0; }
-}
-
-/* A handful of Tamil words scattered at varied heights, drifting gently alongside the balloons. */
-.intro-floating-word {
-  position: absolute;
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: clamp(16px, 2.4vw, 22px);
-  white-space: nowrap;
-  opacity: 0;
-  animation-name: intro-word-float;
-  animation-timing-function: ease-in;
-  animation-fill-mode: forwards;
-}
-@keyframes intro-word-float {
-  0% { transform: translateY(0) translateX(0); opacity: 0; }
-  12% { opacity: .8; }
-  85% { opacity: .7; }
-  100% { transform: translateY(-32vh) translateX(var(--drift, 20px)); opacity: 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .intro-splash-logo, .intro-splash-heading, .intro-splash-tamil { animation: none !important; }
-  .intro-splash-decor { display: none; }
-}

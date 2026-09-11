@@ -2,22 +2,34 @@ import { useEffect, useState, useRef } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../../assets/images/logoweb.png";
 import anniversaryLogo from "../../assets/images/anniversary-10th.png";
-import { fireConfettiBurst } from "../../utils/confettiBurst";
+
+const LOGO_CYCLE = { normal: 4500, anniversary: 2500 };
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showAnniversary, setShowAnniversary] = useState(false);
   const location = useLocation();
   const headerRef = useRef(null);
-  const brandRef = useRef(null);
 
-  const handleLogoHover = () => {
-    const rect = brandRef.current?.getBoundingClientRect();
-    fireConfettiBurst(
-      rect ? rect.left + rect.width / 2 : undefined,
-      rect ? rect.bottom : undefined
-    );
-  };
+  // Quietly cycles the header logo between the normal seal and the
+  // anniversary emblem. Skipped for prefers-reduced-motion visitors,
+  // who just see the normal logo.
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return undefined;
+    }
+    let timer;
+    const tick = (showingAnniversary) => {
+      setShowAnniversary(showingAnniversary);
+      timer = setTimeout(
+        () => tick(!showingAnniversary),
+        showingAnniversary ? LOGO_CYCLE.anniversary : LOGO_CYCLE.normal
+      );
+    };
+    timer = setTimeout(() => tick(true), LOGO_CYCLE.normal);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 16);
@@ -51,14 +63,10 @@ const Header = () => {
     <header ref={headerRef} className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
       <div className="nav-shell">
         <div className="header-brand-group">
-        <Link
-          to="/"
-          className="brand"
-          aria-label="Acton Tamil School home"
-          ref={brandRef}
-          onMouseEnter={handleLogoHover}
-        >
-          <span className="brand-logo brand-logo-wrap">
+        <Link to="/" className="brand" aria-label="Acton Tamil School home">
+          <span
+            className={`brand-logo brand-logo-wrap ${showAnniversary ? "is-anniversary" : ""}`}
+          >
             <img src={logo} alt="" className="brand-logo-img brand-logo-default" />
             <img
               src={anniversaryLogo}
