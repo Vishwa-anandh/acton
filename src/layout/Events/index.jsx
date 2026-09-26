@@ -2,7 +2,7 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { EventImage } from "../../components/Events";
 import ImageModal from "../../components/Events/imagemodal";
-import heroImage from "../../assets/images/event23.jpeg";
+import heroImage from "../../assets/images/5N2A0592.JPG";
 import volunteerImage from "../../assets/images/event001.webp";
 import recognitionImage from "../../assets/images/event28.jpeg";
 

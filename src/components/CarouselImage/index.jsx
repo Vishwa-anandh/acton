@@ -22,7 +22,85 @@ import ceremonyImage from "../../assets/images/event7.webp";
 import historySkitImage from "../../assets/images/event8.webp";
 import independenceDayImage from "../../assets/images/event9.webp";
 
+import newImage01 from "../../assets/images/image (5).png";
+import newImage02 from "../../assets/images/image (6).png";
+import newImage03 from "../../assets/images/5N2A0137.JPG";
+import newImage04 from "../../assets/images/5N2A0157.JPG";
+import newImage05 from "../../assets/images/5N2A0210.JPG";
+import newImage06 from "../../assets/images/5N2A0226.JPG";
+import newImage07 from "../../assets/images/5N2A0241.JPG";
+import newImage08 from "../../assets/images/5N2A0269.JPG";
+import newImage09 from "../../assets/images/5N2A0271.JPG";
+import newImage10 from "../../assets/images/5N2A0295.JPG";
+import newImage11 from "../../assets/images/5N2A0336.JPG";
+
 const slides = [
+  {
+    image: newImage01,
+    alt: "Acton Tamil School community event and gathering",
+    label: "School celebrations",
+    caption: "Students and families gathered together for annual events.",
+  },
+  {
+    image: newImage02,
+    alt: "Acton Tamil School stage performance",
+    label: "Cultural performances",
+    caption: "Students showcasing Tamil traditions and art forms.",
+  },
+  {
+    image: newImage03,
+    alt: "Acton Tamil School students on stage",
+    label: "Stage moments",
+    caption: "Students sharing their learning on stage with pride.",
+  },
+  {
+    image: newImage04,
+    alt: "Acton Tamil School celebration",
+    label: "Celebrating together",
+    caption: "Special school gatherings with students and families.",
+  },
+  {
+    image: newImage05,
+    alt: "Acton Tamil School student presentation",
+    label: "Student expressions",
+    caption: "Building confidence through public speaking and performance.",
+  },
+  {
+    image: newImage06,
+    alt: "Acton Tamil School cultural celebration",
+    label: "Vibrant traditions",
+    caption: "Honoring Tamil language and festival traditions.",
+  },
+  {
+    image: newImage07,
+    alt: "Acton Tamil School teachers and volunteers",
+    label: "Community involvement",
+    caption: "Volunteers and teachers coming together for student growth.",
+  },
+  {
+    image: newImage08,
+    alt: "Acton Tamil School stage gathering",
+    label: "Shared milestones",
+    caption: "Recognizing achievements and progress together.",
+  },
+  {
+    image: newImage09,
+    alt: "Acton Tamil School students and audience",
+    label: "Joyful learning",
+    caption: "Creating memorable experiences in a supportive environment.",
+  },
+  {
+    image: newImage10,
+    alt: "Acton Tamil School families gathered",
+    label: "Family and heritage",
+    caption: "Connecting generations through language and culture.",
+  },
+  {
+    image: newImage11,
+    alt: "Acton Tamil School group photo",
+    label: "School spirit",
+    caption: "Students, teachers, and parents celebrating as one community.",
+  },
   {
     image: pongalImage,
     alt: "Acton Tamil School students presenting a Pongal celebration on stage",

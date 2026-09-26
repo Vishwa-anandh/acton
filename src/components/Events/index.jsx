@@ -16,8 +16,18 @@ import photo15 from "../../assets/images/event6.webp";
 import photo16 from "../../assets/images/event7.webp";
 import photo17 from "../../assets/images/event8.webp";
 import photo18 from "../../assets/images/event9.webp";
+import photo19 from "../../assets/images/5N2A0369.JPG";
+import photo20 from "../../assets/images/5N2A0394.JPG";
+import photo21 from "../../assets/images/5N2A0406.JPG";
+import photo22 from "../../assets/images/5N2A0411.JPG";
+import photo23 from "../../assets/images/5N2A0592.JPG";
 
 export const EventImage = [
+  photo19,
+  photo20,
+  photo21,
+  photo22,
+  photo23,
   photo01,
   photo02,
   photo03,

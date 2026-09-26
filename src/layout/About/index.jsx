@@ -1,5 +1,5 @@
 import Counts from "../../components/Counts";
-import communityImage from "../../assets/images/Action-About-imag.webp";
+import communityImage from "../../assets/images/5N2A0592.JPG";
 import cultureImage from "../../assets/images/mainimage.webp";
 
 const values = [
