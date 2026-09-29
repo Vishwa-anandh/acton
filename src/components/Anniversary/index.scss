@@ -1,0 +1,109 @@
+/* Anniversary keeps the site's cream, maroon and saffron palette. */
+.anniversary { margin: 24px auto 80px; border: 1px solid #e8dccb; border-radius: 32px; background: var(--paper-soft); overflow: hidden; }
+.anniversary-intro { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 48px; padding: clamp(16px, 2.5vw, 36px) clamp(28px, 5vw, 76px); background: radial-gradient(ellipse at 90% 20%, #f4e6cd 0%, transparent 60%); }
+.anniversary-eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; color: var(--maroon); font-size: 11px; font-weight: 750; letter-spacing: .12em; }
+.anniversary-copy h2 { margin: 0 0 24px; color: var(--ink); font-size: clamp(34px, 4.2vw, 62px); line-height: 1.12; letter-spacing: -.04em; }
+.anniversary em { color: var(--maroon); font-family: Georgia, serif; font-weight: 400; }
+.anniversary-tamil { color: var(--maroon); font-size: clamp(16px, 1.5vw, 21px); line-height: 1.8; margin-bottom: 20px; }
+.anniversary-description { max-width: 540px; color: var(--ink-soft); font-size: 16px; line-height: 1.9; margin-bottom: 28px; }
+.anniversary-signoff { display: flex; align-items: center; gap: 12px; margin: 30px 0 0; color: var(--ink-muted); font-size: 9px; letter-spacing: .08em; }
+.anniversary-signoff span { color: #ad7d28; }
+.anniversary-artwork { position: relative; text-align: center; isolation: isolate; }
+.anniversary-artwork img { position: relative; display: block; width: 100%; height: auto; }
+.anniversary-art-caption { display: block; margin-top: 24px; color: var(--ink-soft); font-family: Georgia, serif; font-style: italic; font-size: 14px; }
+.anniversary-stories { padding: clamp(24px, 4vw, 60px); background: var(--paper); border-top: 1px solid #e8dccb; scroll-margin-top: 100px; }
+.stories-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
+.stories-heading h3 { margin: 0; font-size: clamp(32px, 3.5vw, 48px); line-height: 1.15; letter-spacing: -.035em; }
+.stories-heading > p { color: var(--ink-soft); font-size: 14px; line-height: 1.7; margin: 0; }
+.stories-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.stories-filters button { padding: 10px 18px; min-height: 44px; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--ink-soft); font-size: 13px; cursor: pointer; }
+.stories-filters button[aria-pressed="true"] { background: var(--maroon); border-color: var(--maroon); color: white; }
+.stories-count { color: var(--ink-muted); font-size: 11px; margin: 18px 0 12px; }
+.stories-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.memory-card { display: flex; flex-direction: column; padding: 26px; background: #fff; border: 1px solid #e8e0d6; border-radius: 18px; transition: transform .2s, box-shadow .2s; }
+.memory-card:nth-child(3n + 2) { background: #f8f1e7; }
+.memory-card:hover { transform: translateY(-3px); box-shadow: 0 12px 24px #59382c0a; }
+.memory-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 25px; color: var(--ink-soft); font-size: 10px; }
+.memory-number { color: var(--maroon); font-size: 25px; font-family: Georgia, serif; }
+.memory-meta i { margin-left: auto; color: #bb8d41; font-size: 22px; }
+.memory-card h4 { color: var(--ink); font-size: 19px; line-height: 1.35; margin: 0 0 14px; letter-spacing: -.02em; }
+.memory-card > p { color: var(--ink-soft); font-size: 14px; line-height: 1.85; margin: 0 0 22px; }
+.stories-closing { display: flex; align-items: center; justify-content: center; gap: 28px; padding-top: 40px; text-align: center; }
+.stories-closing > span { color: #b28a42; }
+.stories-closing p { margin: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.8; }
+.stories-closing strong { color: var(--maroon); font-weight: 600; }
+@media (max-width: 1000px) { .stories-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .anniversary-intro { gap: 20px; } }
+@media (max-width: 720px) {
+ .anniversary { border-radius: 24px; margin-bottom: 48px; }
+ .anniversary-intro { grid-template-columns: 1fr; }
+ .anniversary-artwork { width: min(100%, 330px); margin: 10px auto 0; }
+ .stories-heading { align-items: start; flex-direction: column; gap: 16px; }
+ .stories-grid { grid-template-columns: 1fr; }
+ .anniversary-signoff { gap: 8px; font-size: 8px; }
+ .anniversary-eyebrow { font-size: 9px; }
+ .memory-card { padding: 24px; }
+ .stories-filters button { padding: 9px 13px; font-size: 12px; }
+}
+
+/* Larger reading sizes and a restrained Three.js anniversary halo. */
+.anniversary .anniversary-description { font-size: 19px; line-height: 1.8; }
+.anniversary .anniversary-eyebrow { font-size: 13px; }
+.anniversary .anniversary-tamil { font-size: 23px; }
+.anniversary .anniversary-signoff { font-size: 11px; flex-wrap: wrap; }
+.anniversary .anniversary-art-caption { font-size: 17px; }
+.anniversary .stories-heading > p, .anniversary .stories-closing p { font-size: 18px; }
+.anniversary .stories-filters { margin-top: 30px; }
+.anniversary .stories-filters button { font-size: 16px; }
+.anniversary .stories-count { font-size: 14px; margin: 20px 0 16px; }
+.anniversary .stories-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.anniversary .memory-card { padding: 32px; }
+.anniversary .memory-meta { font-size: 14px; }
+.anniversary .memory-number { font-size: 32px; }
+.anniversary .memory-card h4 { font-size: 25px; }
+.anniversary .memory-card > p { font-size: 18px; line-height: 1.8; margin-bottom: 0; }
+.anniversary-three-scene { position: absolute; inset: -30px -35px 0; z-index: -1; pointer-events: none; }
+.anniversary-three-scene canvas { display: block; width: 100%; height: 100%; }
+.anniversary-artwork img { width: 88%; margin-inline: auto; }
+@media (max-width: 720px) {
+ .anniversary .stories-grid { grid-template-columns: 1fr; }
+ .anniversary .memory-card { padding: 24px; }
+ .anniversary .memory-card h4 { font-size: 23px; }
+ .anniversary .anniversary-eyebrow { font-size: 11px; }
+ .anniversary .anniversary-tamil { font-size: 20px; }
+ .anniversary .anniversary-signoff { font-size: 10px; }
+ .anniversary-three-scene { inset: -15px -15px 0; }
+}
+
+/* Keep the artwork caption outside the decorative halo. */
+.anniversary .anniversary-art-caption {
+  position: relative;
+  z-index: 1;
+  margin-top: 32px;
+  padding: 12px 8px 0;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #35302b;
+  text-wrap: balance;
+}
+.anniversary .anniversary-three-scene { bottom: 85px; }
+
+.anniversary .stories-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.stories-pagination { display: flex; justify-content: center; gap: 10px; margin-top: 28px; }
+.stories-pagination button { width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--ink); cursor: pointer; font-size: 16px; }
+.stories-pagination button[aria-current="page"] { color: white; background: var(--maroon); border-color: var(--maroon); }
+@media (max-width: 1000px) { .anniversary .stories-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .anniversary .stories-grid { grid-template-columns: 1fr; } }
+
+/* Decorative WebGL remains behind the accessible story content. */
+.anniversary-stories { position: relative; isolation: isolate; }
+.stories-three-scene { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.stories-three-scene canvas { display: block; width: 100%; height: 100%; }
+.anniversary .memory-card { box-shadow: 0 6px 18px rgba(92, 57, 29, .04); }
+@media (max-width: 720px) { .stories-three-scene { opacity: .5; } }
+
+/* Minimal anniversary artwork: no rotating or offset decoration, no card frame. */
+.anniversary .anniversary-artwork img { width: 100%; }
+.anniversary .anniversary-art-caption { margin-top: 20px; padding-top: 0; }

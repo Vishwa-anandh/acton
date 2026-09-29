@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./index.scss";
 import communityImage from "../../assets/images/Action-About.webp";
 import learningActivityImage from "../../assets/images/event5.webp";
 

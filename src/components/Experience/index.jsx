@@ -1,3 +1,5 @@
+import "./index.scss";
+
 const features = [
   {
     icon: "bi-person-hearts",

@@ -1,3 +1,4 @@
+import "./index.scss";
 import logo from "../../assets/images/logoweb.png";
 
 const Loading = () => {

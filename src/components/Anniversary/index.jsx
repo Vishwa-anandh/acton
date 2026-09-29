@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./index.scss";
 import anniversaryLogo from "../../assets/images/anniversary-10th-3d.webp";
 
 const stories = [

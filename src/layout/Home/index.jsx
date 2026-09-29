@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
+import "./index.scss";
 import FAQ from "../../components/FAQ";
 import Experience from "../../components/Experience";
 import Offerings from "../../components/Offerings";

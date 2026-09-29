@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal } from "react-bootstrap";
 import PropTypes from "prop-types";
+import "./index.scss";
 
 const ImageModal = ({
   image,

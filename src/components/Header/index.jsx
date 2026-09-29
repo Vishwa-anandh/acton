@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import "./index.scss";
 import logo from "../../assets/images/logoweb.png";
 import anniversaryLogo from "../../assets/images/anniversary-10th.png";
 
@@ -12,9 +13,7 @@ const Header = () => {
   const location = useLocation();
   const headerRef = useRef(null);
 
-  // Quietly cycles the header logo between the normal seal and the
-  // anniversary emblem. Skipped for prefers-reduced-motion visitors,
-  // who just see the normal logo.
+  // Quietly cycles the header logo seal
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return undefined;
@@ -62,35 +61,71 @@ const Header = () => {
   return (
     <header ref={headerRef} className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
       <div className="nav-shell">
+        {/* Brand logo & School name */}
         <div className="header-brand-group">
-        <Link to="/" className="brand" aria-label="Acton Tamil School home">
-          <span
-            className={`brand-logo brand-logo-wrap ${showAnniversary ? "is-anniversary" : ""}`}
-          >
-            <img src={logo} alt="" className="brand-logo-img brand-logo-default" />
-            <img
-              src={anniversaryLogo}
-              alt=""
-              className="brand-logo-img brand-logo-hover"
-            />
-          </span>
-          <span className="brand-copy">
-            <strong>Acton Tamil School</strong>
-            <span lang="ta">ஆக்டன் தமிழ்ப் பள்ளி</span>
-          </span>
-        </Link>
-        <Link className="anniversary-badge" to="/#anniversary" onClick={() => setMenuOpen(false)}>
-          <span aria-hidden="true">✦</span> <span className="anniversary-prefix">Celebrating</span> 10 Years
-          <i className="bi bi-arrow-down-right" aria-hidden="true" />
-        </Link>
+          <Link to="/" className="brand" aria-label="Acton Tamil School home">
+            <span
+              className={`brand-logo brand-logo-wrap ${showAnniversary ? "is-anniversary" : ""}`}
+            >
+              <img src={logo} alt="" className="brand-logo-img brand-logo-default" />
+              <img
+                src={anniversaryLogo}
+                alt=""
+                className="brand-logo-img brand-logo-hover"
+              />
+            </span>
+            <span className="brand-copy">
+              <strong>Acton Tamil School</strong>
+              <span lang="ta">ஆக்டன் தமிழ்ப் பள்ளி</span>
+            </span>
+          </Link>
+          <Link className="anniversary-badge" to="/#anniversary" onClick={() => setMenuOpen(false)}>
+            <span aria-hidden="true">✦</span> <span className="anniversary-prefix">Celebrating</span> 10 Years
+            <i className="bi bi-arrow-down-right" aria-hidden="true" />
+          </Link>
         </div>
 
+        {/* ----------------------------------------------------
+            1. DESKTOP VIEW NAVIGATION
+            ---------------------------------------------------- */}
+        <nav
+          id="desktop-navigation"
+          className="primary-nav desktop-nav-view"
+          aria-label="Desktop primary navigation"
+        >
+          <NavLink to="/" end className={navClass}>
+            Home
+          </NavLink>
+          <NavLink to="/about" className={navClass}>
+            Our school
+          </NavLink>
+          <NavLink to="/events" className={navClass}>
+            Community
+          </NavLink>
+          <Link to="/#faq" className="nav-item-link">
+            FAQ
+          </Link>
+          <Link to="/#contact" className="nav-item-link">
+            Contact
+          </Link>
+          <a
+            className="button button-small button-primary nav-cta"
+            href="https://www.catamilacademy.org/cta/login.aspx?ReturnUrl=%2fcta"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Enroll now
+            <i className="bi bi-arrow-up-right" aria-hidden="true" />
+          </a>
+        </nav>
+
+        {/* Hamburger menu toggle button for Mobile */}
         <button
           type="button"
           className="menu-toggle"
           aria-expanded={menuOpen}
-          aria-controls="primary-navigation"
-          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+          aria-controls="mobile-navigation-menu"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
           onClick={() => setMenuOpen((current) => !current)}
         >
           <i
@@ -99,31 +134,66 @@ const Header = () => {
           />
         </button>
 
+        {/* ----------------------------------------------------
+            2. MOBILE VIEW NAVIGATION (SEPARATE MOBILE CODE)
+            ---------------------------------------------------- */}
         <nav
-          id="primary-navigation"
-          className={`primary-nav ${menuOpen ? "is-open" : ""}`}
-          aria-label="Primary navigation"
+          id="mobile-navigation-menu"
+          className={`primary-nav mobile-nav-view ${menuOpen ? "is-open" : ""}`}
+          aria-label="Mobile navigation"
         >
-          <NavLink to="/" end className={navClass} onClick={() => setMenuOpen(false)}>
-            Home
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) => `mobile-nav-item ${isActive ? "is-active" : ""}`}
+            onClick={() => setMenuOpen(false)}
+          >
+            <i className="bi bi-house-door" aria-hidden="true" />
+            <span>Home</span>
           </NavLink>
-          <NavLink to="/about" className={navClass} onClick={() => setMenuOpen(false)}>
-            Our school
+
+          <NavLink
+            to="/about"
+            className={({ isActive }) => `mobile-nav-item ${isActive ? "is-active" : ""}`}
+            onClick={() => setMenuOpen(false)}
+          >
+            <i className="bi bi-info-circle" aria-hidden="true" />
+            <span>Our school</span>
           </NavLink>
-          <NavLink to="/events" className={navClass} onClick={() => setMenuOpen(false)}>
-            Community
+
+          <NavLink
+            to="/events"
+            className={({ isActive }) => `mobile-nav-item ${isActive ? "is-active" : ""}`}
+            onClick={() => setMenuOpen(false)}
+          >
+            <i className="bi bi-calendar-event" aria-hidden="true" />
+            <span>Community</span>
           </NavLink>
-          <Link to="/#faq" className="nav-item-link" onClick={() => setMenuOpen(false)}>
-            FAQ
+
+          <Link
+            to="/#faq"
+            className="mobile-nav-item"
+            onClick={() => setMenuOpen(false)}
+          >
+            <i className="bi bi-question-circle" aria-hidden="true" />
+            <span>FAQ</span>
           </Link>
-          <Link to="/#contact" className="nav-item-link" onClick={() => setMenuOpen(false)}>
-            Contact
+
+          <Link
+            to="/#contact"
+            className="mobile-nav-item"
+            onClick={() => setMenuOpen(false)}
+          >
+            <i className="bi bi-envelope" aria-hidden="true" />
+            <span>Contact</span>
           </Link>
+
           <a
-            className="button button-small button-primary nav-cta"
+            className="button button-primary mobile-nav-cta"
             href="https://www.catamilacademy.org/cta/login.aspx?ReturnUrl=%2fcta"
             target="_blank"
             rel="noreferrer"
+            onClick={() => setMenuOpen(false)}
           >
             Enroll now
             <i className="bi bi-arrow-up-right" aria-hidden="true" />

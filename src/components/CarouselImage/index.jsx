@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import "./index.scss";
 import pongalImage from "../../assets/images/event17.webp";
 import achievementImage from "../../assets/images/event20.webp";
 import communityImage from "../../assets/images/event16.webp";
@@ -22,17 +23,17 @@ import ceremonyImage from "../../assets/images/event7.webp";
 import historySkitImage from "../../assets/images/event8.webp";
 import independenceDayImage from "../../assets/images/event9.webp";
 
-import newImage01 from "../../assets/images/image (5).png";
-import newImage02 from "../../assets/images/image (6).png";
-import newImage03 from "../../assets/images/5N2A0137.JPG";
-import newImage04 from "../../assets/images/5N2A0157.JPG";
-import newImage05 from "../../assets/images/5N2A0210.JPG";
-import newImage06 from "../../assets/images/5N2A0226.JPG";
-import newImage07 from "../../assets/images/5N2A0241.JPG";
-import newImage08 from "../../assets/images/5N2A0269.JPG";
-import newImage09 from "../../assets/images/5N2A0271.JPG";
-import newImage10 from "../../assets/images/5N2A0295.JPG";
-import newImage11 from "../../assets/images/5N2A0336.JPG";
+import newImage01 from "../../assets/images/event45.png";
+import newImage02 from "../../assets/images/event46.png";
+import newImage03 from "../../assets/images/event30.jpeg";
+import newImage04 from "../../assets/images/event31.jpeg";
+import newImage05 from "../../assets/images/event32.jpeg";
+import newImage06 from "../../assets/images/event33.jpeg";
+import newImage07 from "../../assets/images/event34.jpeg";
+import newImage08 from "../../assets/images/event35.jpeg";
+import newImage09 from "../../assets/images/event36.jpeg";
+import newImage10 from "../../assets/images/event37.jpeg";
+import newImage11 from "../../assets/images/event38.jpeg";
 
 const slides = [
   {
@@ -448,9 +449,8 @@ const CarouselImage = () => {
                 return (
                   <button
                     type="button"
-                    className={`hero-slide ${
-                      selectedSlide === logicalIndex ? "is-active" : ""
-                    }`}
+                    className={`hero-slide ${selectedSlide === logicalIndex ? "is-active" : ""
+                      }`}
                     onClick={() => setSelectedSlide(logicalIndex)}
                     aria-label={
                       isClone

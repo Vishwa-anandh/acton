@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./index.scss";
 import { FAQList } from "./DynamicQuestion";
 
 const previewCount = 7;

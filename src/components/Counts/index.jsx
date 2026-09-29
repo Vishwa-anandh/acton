@@ -1,3 +1,5 @@
+import "./index.scss";
+
 const stats = [
   { value: "100+", label: "Students learning together" },
   { value: "25+", label: "Volunteer educators" },

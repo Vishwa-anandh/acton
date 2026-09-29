@@ -1,4 +1,4 @@
-
+import "./index.scss";
 
 const mapUrl =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2942.541916210396!2d-71.46089642440738!3d42.48003042751441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e393c44916c563%3A0x6ba8a107c00a3499!2sACTON%20TAMIL%20SCHOOL!5e0!3m2!1sen!2sin!4v1721027613242!5m2!1sen!2sin";
