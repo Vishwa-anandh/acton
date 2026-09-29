@@ -1,3 +1,9 @@
+/* Tailwind is being introduced gradually; @tailwind base (preflight) is
+   deferred until every component below has been converted off the
+   hand-written reset that follows, to avoid interim visual drift. */
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --ink: #1d1d1f;
   --ink-soft: #5d5d64;

@@ -1,10 +1,16 @@
-import "./index.scss";
 import logo from "../../assets/images/logoweb.png";
 
 const Loading = () => {
   return (
-    <div className="loading-state" role="status">
-      <img src={logo} alt="" />
+    <div
+      className="grid content-center place-items-center gap-3.5 min-h-[75vh] text-[0.9rem] text-ink-soft"
+      role="status"
+    >
+      <img
+        src={logo}
+        alt=""
+        className="w-[72px] h-[72px] object-contain animate-loading-pulse"
+      />
       <span>Opening the school…</span>
     </div>
   );

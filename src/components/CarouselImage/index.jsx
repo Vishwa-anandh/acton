@@ -472,7 +472,9 @@ const CarouselImage = () => {
                       width="1000"
                       height="800"
                       loading={index < visibleSlideCount ? "eager" : "lazy"}
-                      fetchPriority={index === 0 ? "high" : "auto"}
+                      // React 18 only recognizes this DOM attribute lowercase;
+                      // eslint-disable-next-line react/no-unknown-property
+                      fetchpriority={index === 0 ? "high" : "auto"}
                       decoding="async"
                       draggable="false"
                       onDragStart={(event) => event.preventDefault()}
