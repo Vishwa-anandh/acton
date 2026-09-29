@@ -26,3 +26,6 @@ node_modules/
 # production
 /build
 /dist
+
+# Vite temp config files (generated when it reloads config on the fly)
+vite.config.*.timestamp-*
