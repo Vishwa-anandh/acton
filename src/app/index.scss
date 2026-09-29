@@ -1,8 +1,13 @@
 /* Tailwind is being introduced gradually; @tailwind base (preflight) is
    deferred until every component below has been converted off the
-   hand-written reset that follows, to avoid interim visual drift. */
+   hand-written reset that follows, to avoid interim visual drift.
+   @tailwind utilities is intentionally NOT here: this file loads early
+   (first import in app/index.jsx), so new utility classes would lose
+   equal-specificity cascade fights against not-yet-converted legacy
+   component rules that load later. It's emitted from
+   src/app/tailwind-utilities.scss instead, imported last in main.jsx,
+   so utilities always win by source order like they're meant to. */
 @tailwind components;
-@tailwind utilities;
 
 :root {
   --ink: #1d1d1f;

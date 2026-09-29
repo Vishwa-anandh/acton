@@ -1,49 +1,82 @@
 import { Link } from "react-router-dom";
-import "./index.scss";
 import logo from "../../assets/images/logoweb.png";
 
 const Footer = () => {
   return (
-    <footer className="site-footer">
-      <div className="section-shell footer-grid">
-        <div className="footer-intro">
-          <Link to="/" className="brand brand-footer">
+    <footer className="mt-[60px] bg-[#191514] text-white/[.68] max-560:mt-[40px]">
+      <div className="section-shell grid grid-cols-[1.55fr_0.72fr_1fr_0.7fr] gap-[54px] pt-[76px] pb-[60px] max-1024:grid-cols-[1.4fr_0.7fr_1fr] max-820:grid-cols-2 max-560:grid-cols-1 max-560:gap-[30px] max-560:pt-12 max-560:pb-[42px]">
+        <div className="max-820:col-span-full">
+          <Link to="/" className="brand text-white hover:!text-white">
             <img src={logo} alt="" className="brand-logo" />
             <span className="brand-copy">
               <strong>Acton Tamil School</strong>
-              <span lang="ta">ஆக்டன் தமிழ்ப் பள்ளி</span>
+              <span lang="ta" className="text-white/[.58]">
+                ஆக்டன் தமிழ்ப் பள்ளி
+              </span>
             </span>
           </Link>
-          <p>
+          <p className="max-w-[360px] mt-6 text-[0.98rem] leading-[1.65] max-560:mt-[18px]">
             Helping the next generation speak, read, and celebrate Tamil with
             confidence.
           </p>
         </div>
 
-        <div className="footer-column">
-          <h2>Explore</h2>
-          <Link to="/about">Our school</Link>
-          <Link to="/events">Community events</Link>
-          <Link to="/#faq">Frequently asked questions</Link>
+        <div className="flex flex-col items-start gap-[11px]">
+          <h2 className="mb-2 text-white text-[0.82rem] font-[720] tracking-[0.01em] normal-case">
+            Explore
+          </h2>
+          <Link
+            to="/about"
+            className="text-white/70 text-[0.87rem] no-underline transition-colors duration-150 hover:text-white max-560:[overflow-wrap:anywhere]"
+          >
+            Our school
+          </Link>
+          <Link
+            to="/events"
+            className="text-white/70 text-[0.87rem] no-underline transition-colors duration-150 hover:text-white max-560:[overflow-wrap:anywhere]"
+          >
+            Community events
+          </Link>
+          <Link
+            to="/#faq"
+            className="text-white/70 text-[0.87rem] no-underline transition-colors duration-150 hover:text-white max-560:[overflow-wrap:anywhere]"
+          >
+            Frequently asked questions
+          </Link>
         </div>
 
-        <div className="footer-column">
-          <h2>Get in touch</h2>
-          <a href="tel:+1-978-393-1772">+1 978-393-1772</a>
-          <a href="mailto:actontamilschool@gmail.com">
+        <div className="flex flex-col items-start gap-[11px]">
+          <h2 className="mb-2 text-white text-[0.82rem] font-[720] tracking-[0.01em] normal-case">
+            Get in touch
+          </h2>
+          <a
+            href="tel:+1-978-393-1772"
+            className="text-white/70 text-[0.87rem] no-underline transition-colors duration-150 hover:text-white max-560:[overflow-wrap:anywhere]"
+          >
+            +1 978-393-1772
+          </a>
+          <a
+            href="mailto:actontamilschool@gmail.com"
+            className="text-white/70 text-[0.87rem] no-underline transition-colors duration-150 hover:text-white max-560:[overflow-wrap:anywhere]"
+          >
             actontamilschool@gmail.com
           </a>
-          <span>36 Charter Road, Acton, MA 01720</span>
+          <span className="text-[0.87rem] max-560:[overflow-wrap:anywhere]">
+            36 Charter Road, Acton, MA 01720
+          </span>
         </div>
 
-        <div className="footer-column">
-          <h2>Follow our community</h2>
-          <div className="social-links">
+        <div className="flex flex-col items-start gap-[11px] max-1024:[grid-column:2/4] max-820:[grid-column:auto]">
+          <h2 className="mb-2 text-white text-[0.82rem] font-[720] tracking-[0.01em] normal-case">
+            Follow our community
+          </h2>
+          <div className="flex gap-[10px]">
             <a
               href="https://www.facebook.com/ActonTamilSchool/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Acton Tamil School on Facebook"
+              className="grid place-items-center w-11 h-11 border border-white/[.14] rounded-full text-base hover:border-white/[.32] hover:bg-white/[.07]"
             >
               <i className="bi bi-facebook" aria-hidden="true" />
             </a>
@@ -52,13 +85,14 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Acton Tamil School on YouTube"
+              className="grid place-items-center w-11 h-11 border border-white/[.14] rounded-full text-base hover:border-white/[.32] hover:bg-white/[.07]"
             >
               <i className="bi bi-youtube" aria-hidden="true" />
             </a>
           </div>
         </div>
       </div>
-      <div className="section-shell footer-bottom">
+      <div className="section-shell flex justify-between pt-[22px] pb-6 border-t border-white/10 text-white/45 text-[0.76rem] max-560:flex-col max-560:items-start max-560:gap-[7px]">
         <span>© {new Date().getFullYear()} Acton Tamil School</span>
         <span>Language · Culture · Community</span>
       </div>

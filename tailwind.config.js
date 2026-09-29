@@ -44,6 +44,11 @@ export default {
         sm: "0 12px 30px rgba(68, 42, 23, 0.08)",
         md: "0 24px 70px rgba(68, 42, 23, 0.14)",
       },
+      screens: {
+        "max-1024": { max: "1024px" },
+        "max-820": { max: "820px" },
+        "max-560": { max: "560px" },
+      },
       width: {
         shell: "min(1480px, calc(100% - 48px))",
       },

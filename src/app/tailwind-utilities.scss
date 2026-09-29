@@ -1,0 +1,4 @@
+/* Deliberately loaded LAST (imported at the end of main.jsx) so Tailwind's
+   utility classes win equal-specificity cascade fights against legacy
+   component CSS still being migrated. See src/app/index.scss for why. */
+@tailwind utilities;
