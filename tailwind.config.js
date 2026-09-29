@@ -45,9 +45,13 @@ export default {
         md: "0 24px 70px rgba(68, 42, 23, 0.14)",
       },
       screens: {
-        "max-1024": { max: "1024px" },
-        "max-820": { max: "820px" },
-        "max-560": { max: "560px" },
+        // Named "mw*" (max-width), not "max-*": Tailwind reserves the
+        // "max-" prefix for its own built-in max-[value] arbitrary
+        // variant syntax, so a custom screen named "max-1024" silently
+        // fails to register as a variant at all.
+        mw1024: { max: "1024px" },
+        mw820: { max: "820px" },
+        mw560: { max: "560px" },
       },
       width: {
         shell: "min(1480px, calc(100% - 48px))",
