@@ -23,8 +23,8 @@ const values = [
 const AboutLayout = () => {
   return (
     <main id="main-content" className="pt-[78px] mw560:pt-[70px]">
-      <section className="section-shell grid grid-cols-1 pt-8 pb-8 mw820:pt-[70px] mw560:pt-[60px] mw560:pb-[65px]">
-        <div className="max-w-[900px] mx-auto mb-[54px] text-center">
+      <section className="page-hero section-shell grid grid-cols-1 pt-8 pb-8 mw820:pt-[70px] mw560:pt-[60px] mw560:pb-[65px]">
+        <div className="page-hero-copy max-w-[900px] mx-auto mb-[54px] text-center">
           <p className="eyebrow">Our school</p>
           <h1 className="text-[clamp(2.9rem,5.6vw,5.25rem)] mw560:text-[clamp(2.9rem,13vw,4.2rem)]">
             Rooted in Tamil. Growing in Acton.
@@ -45,7 +45,7 @@ const AboutLayout = () => {
       </section>
 
       <section className="section section-soft pb-8">
-        <div className="section-shell grid grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] gap-[clamp(42px,5vw,72px)] items-center mw820:grid-cols-1 mw820:gap-9">
+        <div className="about-story section-shell grid grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] gap-[clamp(42px,5vw,72px)] items-center mw820:grid-cols-1 mw820:gap-9">
           <div>
             <p className="eyebrow">Why we are here</p>
             <h2>Preserving a language by making it part of everyday life.</h2>
@@ -105,7 +105,7 @@ const AboutLayout = () => {
       </section>
 
       <section className="section pt-3 pb-6">
-        <div className="section-shell flex items-end justify-between gap-[42px] py-8 px-[clamp(38px,5vw,62px)] rounded-lg [background:radial-gradient(circle_at_80%_0%,rgba(235,169,47,0.34),transparent_28%),var(--maroon)] text-white mw820:items-start mw820:flex-col mw560:p-[34px_28px]">
+        <div className="cta-card section-shell flex items-end justify-between gap-[42px] py-8 px-[clamp(38px,5vw,62px)] rounded-lg [background:radial-gradient(circle_at_80%_0%,rgba(235,169,47,0.34),transparent_28%),var(--maroon)] text-white mw820:items-start mw820:flex-col mw560:p-[34px_28px]">
           <div>
             <p className="eyebrow eyebrow-light">Join our school family</p>
             <h2>Give your child a language for life.</h2>

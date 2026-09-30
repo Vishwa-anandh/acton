@@ -168,7 +168,7 @@ const EventsLayout = () => {
                 Joy worth remembering.
               </h2>
             </div>
-            <p className="mb-[7px] text-ink-soft leading-[1.65] mw1024:col-start-2 mw820:max-w-[650px] mw820:text-[1.05rem] mw820:mt-0">
+            <p className="mt-0 mb-[7px] text-ink-soft leading-[1.65] mw1024:col-start-2 mw820:max-w-[650px] mw820:text-[1.05rem]">
               A look at the performances, celebrations, friendships, and
               milestones that shape our school year.
             </p>
