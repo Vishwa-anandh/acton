@@ -1,0 +1,24 @@
+// Minimal Bootstrap import for react-bootstrap's <Modal>.
+//
+// The full `bootstrap/dist/css/bootstrap.min.css` bundle ships Bootstrap's
+// entire utility API (gap-*, mt-*, opacity-*, shadow-sm, border, text-white,
+// etc.) with !important on almost all of it. Since this page also uses
+// Tailwind utilities with several IDENTICALLY NAMED classes (gap-3, mt-5,
+// opacity-0, opacity-100, shadow-sm, border, border-0, text-white, bg-white,
+// bg-transparent, m-0, mb-0/2/4, mt-0/3, p-0, overflow-hidden, col-auto,
+// flex-wrap...), loading the full bundle silently broke those Tailwind
+// utilities anywhere on this page — Bootstrap's !important always won
+// regardless of specificity or source order.
+//
+// The Modal only needs its own component styles, so we import just that
+// (plus its dependencies) instead of the whole framework.
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/modal";
