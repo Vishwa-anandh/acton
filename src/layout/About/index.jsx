@@ -29,7 +29,7 @@ const AboutLayout = () => {
           <h1 className="!text-[clamp(2.9rem,5.6vw,5.25rem)] mw560:!text-[clamp(2.9rem,13vw,4.2rem)]">
             Rooted in Tamil. Growing in Acton.
           </h1>
-          <p className="max-w-[710px] mx-auto">
+          <p className="max-w-[710px] !mx-auto">
             We are a volunteer-led school helping children build language
             skills, cultural understanding, and a confident sense of identity.
           </p>
@@ -108,7 +108,7 @@ const AboutLayout = () => {
         <div className="cta-card section-shell flex items-end justify-between gap-[42px] py-8 px-[clamp(38px,5vw,62px)] rounded-lg [background:radial-gradient(circle_at_80%_0%,rgba(235,169,47,0.34),transparent_28%),var(--maroon)] text-white mw820:items-start mw820:flex-col mw560:p-[34px_28px]">
           <div>
             <p className="eyebrow eyebrow-light">Join our school family</p>
-            <h2>Give your child a language for life.</h2>
+            <h2 className="max-w-[700px] !text-white">Give your child a language for life.</h2>
           </div>
           <a
             className="button button-light"

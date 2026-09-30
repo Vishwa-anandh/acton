@@ -54,7 +54,7 @@ export default {
         mw560: { max: "560px" },
       },
       width: {
-        shell: "min(1480px, calc(100% - 48px))",
+        shell: "var(--shell)",
       },
       maxWidth: {
         shell: "1480px",

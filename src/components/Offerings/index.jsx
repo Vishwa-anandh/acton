@@ -25,7 +25,7 @@ const Offerings = () => {
     <>
       <section className="section [background:radial-gradient(circle_at_10%_10%,rgba(235,169,47,0.08),transparent_28%),var(--paper)]">
         <div className="section-shell relative grid grid-cols-[minmax(300px,0.78fr)_minmax(0,1.22fr)] gap-[clamp(30px,4vw,58px)] p-[clamp(30px,4vw,58px)] overflow-hidden border border-[rgba(143,21,56,0.1)] rounded-[clamp(30px,3vw,48px)] [background:radial-gradient(circle_at_8%_100%,rgba(143,21,56,0.1),transparent_34%),radial-gradient(circle_at_96%_4%,rgba(235,169,47,0.14),transparent_30%),#f7f1e8] shadow-[0_24px_70px_rgba(68,42,23,0.1)] text-ink before:absolute before:-top-[120px] before:-left-20 before:w-[300px] before:h-[300px] before:border before:border-[rgba(143,21,56,0.11)] before:rounded-full before:content-[''] before:pointer-events-none mw820:grid-cols-1 mw820:p-[34px] mw560:gap-6 mw560:p-5 mw560:rounded-[26px]">
-          <div className="relative z-[1] self-center mw560:max-w-[660px]">
+          <div className="relative z-[1] self-center mw820:max-w-[660px]">
             <p className="eyebrow">How children learn</p>
             <h2 className="max-w-[600px] m-0 text-ink text-[clamp(2.35rem,4.4vw,4.4rem)] font-[720] tracking-heading leading-none mw560:text-[clamp(2.05rem,10.5vw,2.75rem)] mw560:leading-[1.03]">
               A clear path from first words to confident expression.

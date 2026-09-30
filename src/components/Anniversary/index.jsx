@@ -22,12 +22,12 @@ export default function Anniversary() {
   return (
     <section
       id="anniversary"
-      className="section-shell anchor-section my-6 mx-auto mb-20 border border-[#e8dccb] rounded-[32px] bg-paper-soft overflow-hidden max-[720px]:rounded-[24px] max-[720px]:mb-12"
+      className="section-shell anchor-section my-6 mx-auto mb-20 border border-[#e8dccb] rounded-[32px] bg-paper-soft overflow-hidden [@media(max-width:720px)]:rounded-[24px] [@media(max-width:720px)]:mb-12"
       aria-labelledby="anniversary-title"
     >
-      <div className="grid grid-cols-[1.2fr_0.8fr] items-center gap-12 p-[clamp(16px,2.5vw,36px)_clamp(28px,5vw,76px)] [background:radial-gradient(ellipse_at_90%_20%,#f4e6cd_0%,transparent_60%)] max-[1000px]:gap-5 max-[720px]:grid-cols-1">
+      <div className="grid grid-cols-[1.2fr_0.8fr] items-center gap-12 p-[clamp(16px,2.5vw,36px)_clamp(28px,5vw,76px)] [background:radial-gradient(ellipse_at_90%_20%,#f4e6cd_0%,transparent_60%)] [@media(max-width:1000px)]:gap-5 [@media(max-width:720px)]:grid-cols-1">
         <div>
-          <p className="flex items-center gap-[10px] mb-[22px] text-maroon text-[13px] font-[750] tracking-[0.12em] max-[720px]:text-[11px]">
+          <p className="flex items-center gap-[10px] mb-[22px] text-maroon text-[13px] font-[750] tracking-[0.12em] [@media(max-width:720px)]:text-[11px]">
             <span aria-hidden="true">✦</span> A DECADE TO CELEBRATE
           </p>
           <h2
@@ -41,7 +41,7 @@ export default function Anniversary() {
             </em>
           </h2>
           <p
-            className="mt-[1em] mb-5 text-maroon text-[23px] leading-[1.8] max-[720px]:text-[20px]"
+            className="mt-[1em] mb-5 text-maroon text-[23px] leading-[1.8] [@media(max-width:720px)]:text-[20px]"
             lang="ta"
           >
             தமிழோடு வளர்ந்த பத்து ஆண்டுகள்
@@ -55,12 +55,12 @@ export default function Anniversary() {
             Discover the stories{" "}
             <i className="bi bi-arrow-down-right" aria-hidden="true" />
           </a>
-          <p className="flex items-center flex-wrap gap-3 mt-[30px] text-ink-muted text-[11px] tracking-[0.08em] max-[720px]:gap-2 max-[720px]:text-[10px]">
+          <p className="flex items-center flex-wrap gap-3 mt-[30px] text-ink-muted text-[11px] tracking-[0.08em] [@media(max-width:720px)]:gap-2 [@media(max-width:720px)]:text-[10px]">
             OUR LANGUAGE <span className="text-[#ad7d28]">✦</span> OUR ROOTS{" "}
             <span className="text-[#ad7d28]">✦</span> OUR FUTURE
           </p>
         </div>
-        <div className="relative text-center isolate max-[720px]:w-[min(100%,330px)] max-[720px]:mx-auto max-[720px]:mt-[10px]">
+        <div className="relative text-center isolate [@media(max-width:720px)]:w-[min(100%,330px)] [@media(max-width:720px)]:mx-auto [@media(max-width:720px)]:mt-[10px]">
           <img
             src={anniversaryLogo}
             alt="Acton Tamil School 10th anniversary emblem"
@@ -80,16 +80,16 @@ export default function Anniversary() {
         className="relative isolate p-[clamp(24px,4vw,60px)] bg-paper border-t border-[#e8dccb] scroll-mt-[100px]"
         aria-labelledby="stories-title"
       >
-        <div className="flex items-end justify-between gap-6 max-[720px]:items-start max-[720px]:flex-col max-[720px]:gap-4">
+        <div className="flex items-end justify-between gap-6 [@media(max-width:720px)]:items-start [@media(max-width:720px)]:flex-col [@media(max-width:720px)]:gap-4">
           <div>
-            <p className="flex items-center gap-[10px] mb-[22px] text-maroon text-[13px] font-[750] tracking-[0.12em] max-[720px]:text-[11px]">
+            <p className="flex items-center gap-[10px] mb-[22px] text-maroon text-[13px] font-[750] tracking-[0.12em] [@media(max-width:720px)]:text-[11px]">
               THE PEOPLE BEHIND THE JOURNEY
             </p>
             <h3
               id="stories-title"
               className="m-0 text-[clamp(32px,3.5vw,48px)] font-bold leading-[1.15] tracking-[-0.035em]"
             >
-              10 years. <em>10 stories.</em>
+              10 years. <em className="text-maroon [font-family:Georgia,serif] font-normal">10 stories.</em>
             </h3>
           </div>
           <p className="text-ink-soft text-[18px] leading-[1.7]">
@@ -108,7 +108,7 @@ export default function Anniversary() {
               type="button"
               aria-pressed={filter === item}
               onClick={() => { setFilter(item); setPage(0); }}
-              className="py-[10px] px-[18px] min-h-11 border border-line rounded-full bg-transparent text-ink-soft text-[16px] leading-[normal] cursor-pointer aria-pressed:bg-maroon aria-pressed:border-maroon aria-pressed:text-white"
+              className="py-[10px] px-[18px] min-h-11 border border-line rounded-full bg-transparent text-ink-soft text-[16px] leading-[normal] tracking-normal cursor-pointer [@media(max-width:720px)]:py-[9px] [@media(max-width:720px)]:px-[13px] aria-pressed:bg-maroon aria-pressed:border-maroon aria-pressed:text-white"
             >
               {item === "All stories" ? item : `${item}s`}
             </button>
@@ -122,10 +122,10 @@ export default function Anniversary() {
           {Math.min((page + 1) * 6, visible.length)} of {visible.length}{" "}
           stories
         </p>
-        <div className="grid grid-cols-3 gap-[22px] max-[1000px]:grid-cols-2 max-[720px]:grid-cols-1">
+        <div className="grid grid-cols-3 gap-[22px] [@media(max-width:1000px)]:grid-cols-2 [@media(max-width:720px)]:grid-cols-1">
           {visible.slice(page * 6, (page + 1) * 6).map(story => (
             <article
-              className="flex flex-col p-8 bg-white border border-[#e8e0d6] rounded-[18px] shadow-[0_6px_18px_rgba(92,57,29,0.04)] transition-[transform,box-shadow] duration-200 [&:nth-child(3n+2)]:bg-[#f8f1e7] hover:-translate-y-[3px] hover:shadow-[0_12px_24px_#59382c0a] max-[720px]:p-6"
+              className="flex flex-col p-[26px] bg-white border border-[#e8e0d6] rounded-[18px] shadow-[0_6px_18px_rgba(92,57,29,0.04)] transition-[transform,box-shadow] duration-200 [&:nth-child(3n+2)]:bg-[#f8f1e7] hover:-translate-y-[3px] hover:shadow-[0_12px_24px_#59382c0a]"
               key={story.number}
             >
               <div className="flex items-center gap-[10px] mb-[25px] text-ink-soft text-[14px]">
@@ -153,7 +153,7 @@ export default function Anniversary() {
               type="button"
               aria-current={page === 0 ? "page" : undefined}
               onClick={() => setPage(0)}
-              className="w-11 h-11 border border-line rounded-full bg-white text-ink cursor-pointer text-[16px] aria-[current=page]:text-white aria-[current=page]:bg-maroon aria-[current=page]:border-maroon"
+              className="w-11 h-11 border border-line rounded-full bg-white text-ink cursor-pointer text-[16px] tracking-normal aria-[current=page]:text-white aria-[current=page]:bg-maroon aria-[current=page]:border-maroon"
             >
               1
             </button>
@@ -161,7 +161,7 @@ export default function Anniversary() {
               type="button"
               aria-current={page === 1 ? "page" : undefined}
               onClick={() => setPage(1)}
-              className="w-11 h-11 border border-line rounded-full bg-white text-ink cursor-pointer text-[16px] aria-[current=page]:text-white aria-[current=page]:bg-maroon aria-[current=page]:border-maroon"
+              className="w-11 h-11 border border-line rounded-full bg-white text-ink cursor-pointer text-[16px] tracking-normal aria-[current=page]:text-white aria-[current=page]:bg-maroon aria-[current=page]:border-maroon"
             >
               2
             </button>

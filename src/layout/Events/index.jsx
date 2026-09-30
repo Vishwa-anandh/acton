@@ -168,11 +168,11 @@ const EventsLayout = () => {
                 Joy worth remembering.
               </h2>
             </div>
-            <p className="mt-0 mb-[7px] text-ink-soft leading-[1.65] mw1024:col-start-2 mw820:max-w-[650px] mw820:text-[1.05rem]">
+            <p className="mt-0 mb-[7px] text-ink-soft leading-[1.65] mw1024:col-start-2 mw820:!col-start-auto mw820:max-w-[650px] mw820:text-[1.05rem]">
               A look at the performances, celebrations, friendships, and
               milestones that shape our school year.
             </p>
-            <span className="mb-2 text-maroon text-[0.8rem] font-[760] whitespace-nowrap mw1024:col-start-2 mw820:col-auto mw820:mt-0 mw820:mb-0">
+            <span className="mb-2 text-maroon text-[0.8rem] font-[760] whitespace-nowrap mw1024:col-start-2 mw820:!col-start-auto mw820:mt-0 mw820:mb-0">
               {EventImage.length} photos
             </span>
           </div>
@@ -270,7 +270,7 @@ const EventsLayout = () => {
       </section>
 
       <section className="section pb-6">
-        <div className="section-shell flex items-end justify-between gap-12 py-8 px-[clamp(40px,5vw,66px)] rounded-[8px] bg-green text-white mw1024:items-start mw1024:flex-col">
+        <div className="section-shell flex items-end justify-between gap-12 py-8 px-[clamp(40px,5vw,66px)] rounded-[8px] bg-green text-white mw1024:items-start mw1024:flex-col mw560:gap-[34px] mw560:py-8 mw560:px-6">
           <div>
             <p className="eyebrow eyebrow-light">Stay connected</p>
             <h2 className="max-w-[720px] m-0 text-white text-[clamp(2.35rem,4.5vw,4rem)] font-medium tracking-normal mw560:text-[clamp(2.2rem,11vw,3rem)]">
@@ -281,7 +281,7 @@ const EventsLayout = () => {
               families learning with us.
             </p>
           </div>
-          <div className="flex items-center flex-wrap justify-end gap-3 mw1024:justify-start mw560:items-stretch mw560:flex-col">
+          <div className="flex items-center flex-wrap justify-end gap-3 mw1024:justify-start mw820:w-full mw560:items-stretch mw560:flex-col">
             <a
               className="button button-light mw560:w-full"
               href="https://www.facebook.com/ActonTamilSchool/"
