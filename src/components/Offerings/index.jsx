@@ -84,7 +84,7 @@ const Offerings = () => {
           />
           <div className="community-overlay relative z-[1] flex flex-col items-start justify-center w-[min(570px,100%)] min-h-[480px] p-[clamp(36px,5vw,68px)] text-white mw820:min-h-[500px] mw820:justify-end mw820:w-full mw560:min-h-[450px] mw560:p-[26px_22px]">
             <p className="eyebrow eyebrow-light">More than a classroom</p>
-            <h2>A community growing together.</h2>
+            <h2 className="!text-white">A community growing together.</h2>
             <p className="mt-6 mb-[30px] text-white/80 text-[1.08rem] leading-[1.65] mw560:mt-[18px] mw560:mb-6 mw560:text-[0.98rem] mw560:leading-[1.58]">
               Festivals, performances, friendships, and shared traditions make
               Tamil something children live—not only something they study.
