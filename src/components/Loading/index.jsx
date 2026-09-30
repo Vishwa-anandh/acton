@@ -1,4 +1,4 @@
-import logo from "../../assets/images/logoweb.png";
+import logo from "../../assets/images/logoweb.webp";
 
 const Loading = () => {
   return (

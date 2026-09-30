@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import "./index.scss";
-import logo from "../../assets/images/logoweb.png";
-import anniversaryLogo from "../../assets/images/anniversary-10th.png";
+import logo from "../../assets/images/logoweb.webp";
+import anniversaryLogo from "../../assets/images/anniversary-10th.webp";
 
 const LOGO_CYCLE = { normal: 4500, anniversary: 2500 };
 

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { EventImage } from "../../components/Events";
 import ImageModal from "../../components/Events/imagemodal";
-import heroImage from "../../assets/images/event43.jpeg";
+import heroImage from "../../assets/images/event43.webp";
 import volunteerImage from "../../assets/images/event001.webp";
-import recognitionImage from "../../assets/images/event28.jpeg";
+import recognitionImage from "../../assets/images/event28.webp";
 
 const INITIAL_PHOTO_COUNT = 12;
 

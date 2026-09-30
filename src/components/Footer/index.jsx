@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logoweb.png";
+import logo from "../../assets/images/logoweb.webp";
 
 const Footer = () => {
   return (
