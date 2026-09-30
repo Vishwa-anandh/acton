@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import "./index.scss";
 import pongalImage from "../../assets/images/event17.webp";
 import achievementImage from "../../assets/images/event20.webp";
 import communityImage from "../../assets/images/event16.webp";
@@ -403,25 +402,31 @@ const CarouselImage = () => {
   const activeContent = slides[selectedSlide];
 
   return (
-    <section className="hero section-shell" aria-labelledby="hero-title">
-      <div className="hero-copy">
-        <p className="tamil-kicker" lang="ta">
+    <section
+      className="section-shell block text-center pt-[126px] pb-[14px] mw820:pt-[116px] mw820:pb-5 mw560:pt-[90px] mw560:pb-5"
+      aria-labelledby="hero-title"
+    >
+      <div className="flex flex-col items-center">
+        <p className="mb-[10px] text-maroon font-[680] text-[clamp(0.9rem,1.2vw,1.05rem)]" lang="ta">
           தமிழோடு வளர்வோம்
         </p>
-        <h1 id="hero-title">
-          <span>Language.</span>
-          <span>Culture.</span>
-          <span>Belonging.</span>
+        <h1
+          id="hero-title"
+          className="flex justify-center gap-[0.16em] m-0 text-ink text-[clamp(1rem,5.45vw,4.8rem)] font-[760] tracking-[-0.045em] leading-[0.95] whitespace-nowrap"
+        >
+          <span className="text-ink">Language.</span>
+          <span className="text-ink">Culture.</span>
+          <span className="text-maroon">Belonging.</span>
         </h1>
-        <p className="hero-intro">
+        <p className="max-w-[520px] mt-4 mx-auto text-ink-soft text-[0.92rem] tracking-body leading-[1.6] mw560:max-w-[345px] mw560:mt-[14px] mw560:px-[10px] mw560:text-[0.88rem]">
           A joyful Sunday school where children grow through Tamil language,
           culture, and community.
         </p>
       </div>
 
-      <div className="hero-visual">
+      <div className="justify-self-auto w-[calc(100vw-4px)] max-w-none mt-5 ml-[calc(50%-50vw+2px)] p-0 mw820:mt-6 mw560:mt-[18px]">
         <div
-          className="hero-carousel"
+          className="relative"
           role="region"
           aria-roledescription="carousel"
           aria-label="Acton Tamil School highlights"
@@ -433,7 +438,9 @@ const CarouselImage = () => {
           }}
         >
           <div
-            className={`hero-image-wrap ${isDragging ? "is-dragging" : ""}`}
+            className={`isolate block w-full h-[clamp(320px,30vw,450px)] p-0 overflow-hidden [aspect-ratio:auto] border-0 rounded-none bg-transparent shadow-none [touch-action:pan-y] select-none [--hero-track-width:500%] [--hero-slide-width:6.25%] min-[1025px]:h-[clamp(360px,32vw,480px)] mw820:[--hero-track-width:727.2727%] mw820:h-[clamp(330px,48vw,390px)] mw560:[--hero-track-width:1333.3333%] mw560:h-[clamp(330px,98vw,370px)] motion-reduce:cursor-default before:absolute before:-right-[10%] before:-left-[10%] before:z-[5] before:top-[clamp(-44px,-3vw,-24px)] before:h-[clamp(50px,6vw,88px)] before:bg-paper before:content-[''] before:pointer-events-none before:[border-radius:0_0_50%_50%/0_0_100%_100%] after:absolute after:-right-[10%] after:-left-[10%] after:z-[5] after:bottom-[clamp(-44px,-3vw,-24px)] after:h-[clamp(50px,6vw,88px)] after:bg-paper after:content-[''] after:pointer-events-none after:[border-radius:50%_50%_0_0/100%_100%_0_0] mw560:before:translate-y-[2px] mw560:before:[filter:drop-shadow(0_2px_0_var(--paper))] mw560:after:-translate-y-[2px] mw560:after:[filter:drop-shadow(0_-2px_0_var(--paper))] ${
+              isDragging ? "cursor-grabbing" : "cursor-grab"
+            }`}
             ref={wrapRef}
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
@@ -441,16 +448,29 @@ const CarouselImage = () => {
             onPointerCancel={endDrag}
             onLostPointerCapture={endDrag}
           >
-            <div className="hero-slide-track" ref={trackRef}>
+            <div
+              className="flex w-[var(--hero-track-width)] h-full [will-change:transform]"
+              ref={trackRef}
+            >
               {carouselSlides.map((slide, index) => {
                 const logicalIndex = index % slides.length;
                 const isClone = index >= slides.length;
+                const isActive = selectedSlide === logicalIndex;
+                const objectPositionClass =
+                  index === 0
+                    ? "object-[54%_center]"
+                    : index === 1
+                      ? "object-[center_42%]"
+                      : index === 3 || index === 4
+                        ? "object-[center_38%]"
+                        : "object-center";
 
                 return (
                   <button
                     type="button"
-                    className={`hero-slide ${selectedSlide === logicalIndex ? "is-active" : ""
-                      }`}
+                    className={`relative inset-auto basis-[var(--hero-slide-width)] grow-0 shrink-0 min-w-0 h-full m-0 p-0 overflow-hidden border-0 border-r-[6px] border-r-paper rounded-none bg-paper-soft opacity-100 cursor-pointer transition-[filter,transform] duration-500 ease-[cubic-bezier(0.2,0.7,0.2,1)] focus-visible:z-40 mw820:border-r-[5px] mw560:border-r-0 mw560:scale-100 ${
+                      isActive ? "z-20 scale-100" : "scale-[1.025]"
+                    }`}
                     onClick={() => setSelectedSlide(logicalIndex)}
                     aria-label={
                       isClone
@@ -478,6 +498,11 @@ const CarouselImage = () => {
                       decoding="async"
                       draggable="false"
                       onDragStart={(event) => event.preventDefault()}
+                      className={`w-full h-full [filter:saturate(0.88)_brightness(0.94)] object-cover [-webkit-user-drag:none] transition-[filter,transform] duration-[650ms] ease-[cubic-bezier(0.2,0.7,0.2,1)] ${objectPositionClass} ${
+                        isActive
+                          ? "[filter:saturate(1)_brightness(1)] scale-[1.025]"
+                          : "hover:[filter:saturate(1)_brightness(1)] hover:scale-[1.025]"
+                      }`}
                     />
                   </button>
                 );
@@ -487,14 +512,22 @@ const CarouselImage = () => {
         </div>
       </div>
 
-      <div className="hero-footer">
-        <div className="hero-active-copy" aria-live="polite" aria-atomic="true">
-          <span>{activeContent.label}</span>
-          <p>{activeContent.caption}</p>
+      <div className="flex items-center flex-col max-w-[680px] mt-[18px] mx-auto mw560:w-shell mw560:mt-4">
+        <div
+          className="mw560:w-full"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <span className="text-maroon text-[0.9rem] font-[740] tracking-label mw560:text-[0.7rem]">
+            {activeContent.label}
+          </span>
+          <p className="mt-1 text-ink-soft text-[1.15rem] leading-[1.55] mw560:max-w-[330px] mw560:mx-auto mw560:text-[0.92rem] mw560:leading-[1.5]">
+            {activeContent.caption}
+          </p>
         </div>
-        <div className="hero-actions">
+        <div className="flex flex-wrap gap-3 justify-center mt-[14px] mw560:gap-[10px] mw560:mt-3 mw560:w-full">
           <a
-            className="button button-primary"
+            className="button button-primary min-h-[44px] px-[18px] text-[0.86rem] mw560:w-full"
             href="https://www.catamilacademy.org/cta/login.aspx?ReturnUrl=%2fcta"
             target="_blank"
             rel="noreferrer"
@@ -502,7 +535,10 @@ const CarouselImage = () => {
             Enroll your child
             <i className="bi bi-arrow-up-right" aria-hidden="true" />
           </a>
-          <Link className="button button-secondary" to="/about">
+          <Link
+            className="button button-secondary min-h-[44px] px-[18px] text-[0.86rem] mw560:w-full"
+            to="/about"
+          >
             Discover our school
           </Link>
         </div>
