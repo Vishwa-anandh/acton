@@ -26,8 +26,19 @@ const Header = () => {
         showingAnniversary ? LOGO_CYCLE.anniversary : LOGO_CYCLE.normal
       );
     };
-    timer = setTimeout(() => tick(true), LOGO_CYCLE.normal);
-    return () => clearTimeout(timer);
+    const start = () => {
+      timer = setTimeout(() => tick(true), LOGO_CYCLE.normal);
+    };
+    // Hold the first cycle until the site intro has landed its seal here.
+    if (document.documentElement.classList.contains("ai-playing")) {
+      window.addEventListener("ats:intro-end", start, { once: true });
+    } else {
+      start();
+    }
+    return () => {
+      window.removeEventListener("ats:intro-end", start);
+      clearTimeout(timer);
+    };
   }, []);
 
   useEffect(() => {
