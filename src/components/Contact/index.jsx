@@ -43,7 +43,7 @@ const ContactUs = () => {
           <h3 className="m-0 text-[clamp(2rem,4vw,3.4rem)] font-[720] tracking-heading leading-[1.05] mw560:text-[clamp(2rem,10vw,2.55rem)]">
             Let’s start a conversation.
           </h3>
-          <p className="mt-5 mb-[30px] text-ink-soft text-base mw560:mt-4 mw560:mb-6 mw560:text-[0.95rem]">
+          <p className="mt-5 mb-[30px] text-ink-soft text-[1rem] mw560:mt-4 mw560:mb-6 mw560:text-[0.95rem]">
             Classes meet on Sunday mornings. Reach out and our volunteer team
             will help you find the right next step.
           </p>

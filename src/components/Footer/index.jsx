@@ -20,7 +20,7 @@ const Footer = () => {
               </span>
             </span>
           </Link>
-          <p className="max-w-[360px] mt-6 text-[0.98rem] leading-[1.65] mw560:mt-[18px]">
+          <p className="max-w-[360px] mt-6 mb-0 text-[0.98rem] leading-[1.65] mw560:mt-[18px]">
             Helping the next generation speak, read, and celebrate Tamil with
             confidence.
           </p>

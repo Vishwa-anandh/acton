@@ -32,7 +32,7 @@ export default function Anniversary() {
           </p>
           <h2
             id="anniversary-title"
-            className="m-0 mb-6 text-ink text-[clamp(34px,4.2vw,62px)] leading-[1.12] tracking-[-0.04em]"
+            className="m-0 mb-6 text-ink text-[clamp(34px,4.2vw,62px)] font-bold leading-[1.12] tracking-[-0.04em]"
           >
             Rooted in Tamil.
             <br />
@@ -41,12 +41,12 @@ export default function Anniversary() {
             </em>
           </h2>
           <p
-            className="mb-5 text-maroon text-[23px] leading-[1.8] max-[720px]:text-[20px]"
+            className="mt-[1em] mb-5 text-maroon text-[23px] leading-[1.8] max-[720px]:text-[20px]"
             lang="ta"
           >
             தமிழோடு வளர்ந்த பத்து ஆண்டுகள்
           </p>
-          <p className="max-w-[540px] mb-7 text-ink-soft text-[19px] leading-[1.8]">
+          <p className="mt-[1em] max-w-[540px] mb-7 text-ink-soft text-[19px] leading-[1.8]">
             Ten years of little beginnings, lasting friendships, and a
             language that brings us closer. A celebration of everyone who
             makes Acton Tamil School feel like home.
@@ -87,7 +87,7 @@ export default function Anniversary() {
             </p>
             <h3
               id="stories-title"
-              className="m-0 text-[clamp(32px,3.5vw,48px)] leading-[1.15] tracking-[-0.035em]"
+              className="m-0 text-[clamp(32px,3.5vw,48px)] font-bold leading-[1.15] tracking-[-0.035em]"
             >
               10 years. <em>10 stories.</em>
             </h3>
@@ -108,7 +108,7 @@ export default function Anniversary() {
               type="button"
               aria-pressed={filter === item}
               onClick={() => { setFilter(item); setPage(0); }}
-              className="py-[10px] px-[18px] min-h-11 border border-line rounded-full bg-transparent text-ink-soft text-[16px] cursor-pointer aria-pressed:bg-maroon aria-pressed:border-maroon aria-pressed:text-white"
+              className="py-[10px] px-[18px] min-h-11 border border-line rounded-full bg-transparent text-ink-soft text-[16px] leading-[normal] cursor-pointer aria-pressed:bg-maroon aria-pressed:border-maroon aria-pressed:text-white"
             >
               {item === "All stories" ? item : `${item}s`}
             </button>
@@ -125,7 +125,7 @@ export default function Anniversary() {
         <div className="grid grid-cols-3 gap-[22px] max-[1000px]:grid-cols-2 max-[720px]:grid-cols-1">
           {visible.slice(page * 6, (page + 1) * 6).map(story => (
             <article
-              className="flex flex-col p-[26px] bg-white border border-[#e8e0d6] rounded-[18px] shadow-[0_6px_18px_rgba(92,57,29,0.04)] transition-[transform,box-shadow] duration-200 [&:nth-child(3n+2)]:bg-[#f8f1e7] hover:-translate-y-[3px] hover:shadow-[0_12px_24px_#59382c0a] max-[720px]:p-6"
+              className="flex flex-col p-8 bg-white border border-[#e8e0d6] rounded-[18px] shadow-[0_6px_18px_rgba(92,57,29,0.04)] transition-[transform,box-shadow] duration-200 [&:nth-child(3n+2)]:bg-[#f8f1e7] hover:-translate-y-[3px] hover:shadow-[0_12px_24px_#59382c0a] max-[720px]:p-6"
               key={story.number}
             >
               <div className="flex items-center gap-[10px] mb-[25px] text-ink-soft text-[14px]">
@@ -135,7 +135,7 @@ export default function Anniversary() {
                 <span>{story.role} perspective</span>
                 <i className="bi bi-chat-quote ml-auto text-[#bb8d41] text-[22px]" aria-hidden="true" />
               </div>
-              <h4 className="text-ink text-[25px] leading-[1.35] mb-[14px] tracking-[-0.02em]">
+              <h4 className="text-ink text-[25px] font-bold leading-[1.35] mb-[14px] tracking-[-0.02em]">
                 {story.title}
               </h4>
               <p className="text-ink-soft text-[18px] leading-[1.8] mb-0">

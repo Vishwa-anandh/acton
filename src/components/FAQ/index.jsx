@@ -49,7 +49,7 @@ const FAQuestion = () => {
         </div>
         <button
           type="button"
-          className="inline-flex items-center gap-2 mt-5 py-[9px] px-0 border-0 bg-transparent text-maroon text-[0.91rem] font-bold tracking-control hover:text-maroon-dark"
+          className="inline-flex items-center gap-2 mt-5 py-[9px] px-0 border-0 bg-transparent text-maroon text-[0.91rem] font-bold leading-[normal] tracking-control hover:text-maroon-dark"
           onClick={() => setShowAll((current) => !current)}
           aria-expanded={showAll}
         >

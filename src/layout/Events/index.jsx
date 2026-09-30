@@ -55,14 +55,14 @@ const EventsLayout = () => {
   };
 
   return (
-    <main id="main-content" className="pt-[78px] mw560:pt-[70px]">
+    <main id="main-content">
       <section className="section-shell relative flex items-end min-h-[clamp(590px,calc(100svh-130px),720px)] mt-7 p-[clamp(34px,5vw,70px)] overflow-hidden rounded-lg bg-[#171314] text-white after:absolute after:inset-0 after:z-[1] after:[background:linear-gradient(90deg,rgba(15,9,11,0.86),rgba(15,9,11,0.34)_62%,rgba(15,9,11,0.08)),linear-gradient(0deg,rgba(15,9,11,0.68),transparent_52%)] after:content-[''] mw1024:min-h-[650px] mw820:min-h-[620px] mw820:mt-[18px] mw820:p-[38px] mw820:after:[background:linear-gradient(90deg,rgba(15,9,11,0.82),rgba(15,9,11,0.28)),linear-gradient(0deg,rgba(15,9,11,0.82),transparent_70%)] mw560:min-h-[570px] mw560:mt-[14px] mw560:p-[26px_22px]">
         <div className="relative z-[2] max-w-[760px]">
           <p className="eyebrow text-[#f4c76e]">Our community</p>
-          <h1 className="max-w-[720px] m-0 text-white text-[clamp(3.35rem,6vw,5.7rem)] tracking-normal leading-[0.95] mw560:text-[clamp(2.7rem,13vw,3.55rem)] mw560:leading-[0.98]">
+          <h1 className="max-w-[720px] m-0 text-white text-[clamp(3.35rem,6vw,5.7rem)] font-medium tracking-normal leading-[0.95] mw560:text-[clamp(2.7rem,13vw,3.55rem)] mw560:leading-[0.98]">
             Where Tamil comes alive, together.
           </h1>
-          <p className="max-w-[630px] mt-6 text-white/[.78] text-[clamp(1rem,1.4vw,1.14rem)] leading-[1.65] mw560:mt-[18px] mw560:text-[0.94rem] mw560:leading-[1.58]">
+          <p className="max-w-[630px] mt-6 mb-0 text-white/[.78] text-[clamp(1rem,1.4vw,1.14rem)] leading-[1.65] mw560:mt-[18px] mw560:text-[0.94rem] mw560:leading-[1.58]">
             Classrooms are only the beginning. Our families, students, and
             volunteers create a place where language becomes performance,
             tradition, friendship, and belonging.
@@ -122,7 +122,7 @@ const EventsLayout = () => {
               <p className="eyebrow">More than a school day</p>
               <h2
                 id="community-gathering-title"
-                className="max-w-[820px] m-0 text-[clamp(2.4rem,4.5vw,4.25rem)] tracking-normal mw560:text-[clamp(2.15rem,10.5vw,2.8rem)]"
+                className="max-w-[820px] m-0 text-[clamp(2.4rem,4.5vw,4.25rem)] font-medium tracking-normal mw560:text-[clamp(2.15rem,10.5vw,2.8rem)]"
               >
                 Language is learned in class. Belonging is built together.
               </h2>
@@ -163,7 +163,7 @@ const EventsLayout = () => {
               <p className="eyebrow">Community moments</p>
               <h2
                 id="community-moments-title"
-                className="max-w-[820px] m-0 text-[clamp(2.4rem,4.5vw,4.25rem)] tracking-normal mw560:text-[clamp(2.15rem,10.5vw,2.8rem)]"
+                className="max-w-[820px] m-0 text-[clamp(2.4rem,4.5vw,4.25rem)] font-medium tracking-normal mw560:text-[clamp(2.15rem,10.5vw,2.8rem)]"
               >
                 Joy worth remembering.
               </h2>
@@ -273,10 +273,10 @@ const EventsLayout = () => {
         <div className="section-shell flex items-end justify-between gap-12 py-8 px-[clamp(40px,5vw,66px)] rounded-[8px] bg-green text-white mw1024:items-start mw1024:flex-col">
           <div>
             <p className="eyebrow eyebrow-light">Stay connected</p>
-            <h2 className="max-w-[720px] m-0 text-white text-[clamp(2.35rem,4.5vw,4rem)] tracking-normal mw560:text-[clamp(2.2rem,11vw,3rem)]">
+            <h2 className="max-w-[720px] m-0 text-white text-[clamp(2.35rem,4.5vw,4rem)] font-medium tracking-normal mw560:text-[clamp(2.2rem,11vw,3rem)]">
               Share in what our community does next.
             </h2>
-            <p className="max-w-[600px] mt-5 text-white/75 leading-[1.65]">
+            <p className="max-w-[600px] mt-5 mb-0 text-white/75 leading-[1.65]">
               Follow school celebrations and student moments, or join the
               families learning with us.
             </p>

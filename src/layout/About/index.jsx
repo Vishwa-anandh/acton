@@ -26,7 +26,7 @@ const AboutLayout = () => {
       <section className="page-hero section-shell grid grid-cols-1 pt-8 pb-8 mw820:pt-[70px] mw560:pt-[60px] mw560:pb-[65px]">
         <div className="page-hero-copy max-w-[900px] mx-auto mb-[54px] text-center">
           <p className="eyebrow">Our school</p>
-          <h1 className="text-[clamp(2.9rem,5.6vw,5.25rem)] mw560:text-[clamp(2.9rem,13vw,4.2rem)]">
+          <h1 className="!text-[clamp(2.9rem,5.6vw,5.25rem)] mw560:!text-[clamp(2.9rem,13vw,4.2rem)]">
             Rooted in Tamil. Growing in Acton.
           </h1>
           <p className="max-w-[710px] mx-auto">
