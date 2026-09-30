@@ -1,5 +1,3 @@
-import "./index.scss";
-
 const features = [
   {
     icon: "bi-person-hearts",
@@ -30,7 +28,7 @@ const Experience = () => {
             child room to learn and belong.
           </p>
         </div>
-        <div className="feature-grid">
+        <div className="grid grid-cols-3 gap-5 mw820:grid-cols-1 mw820:gap-[14px]">
           {features.map((feature, index) => (
             <article className="feature-card" key={feature.title}>
               <span className={`feature-number`}>0{index + 1}</span>
