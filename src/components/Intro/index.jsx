@@ -285,10 +285,10 @@ export default function Intro() {
                     pathLength="1"
                     filter="url(#ai-gl)"
                     stroke="url(#ai-gg)"
-                    strokeWidth="7"
+                    strokeWidth="15"
                     d={d}
                   />
-                  <circle r="9" fill="#fff" filter="url(#ai-gl)" opacity="0">
+                  <circle r="14" fill="#fff" filter="url(#ai-gl)" opacity="0">
                     <animateMotion dur=".85s" begin=".05s" fill="freeze" path={d} />
                     <animate
                       attributeName="opacity"
