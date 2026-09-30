@@ -58,7 +58,11 @@ const HomeLayout = () => {
         </a>
       </aside>
       <Offerings />
-      <section ref={faqRef} id="faq" className="section section-soft anchor-section">
+      <section
+        ref={faqRef}
+        id="faq"
+        className="section section-soft anchor-section !pt-10"
+      >
         <FAQ />
       </section>
       <section ref={contactRef} id="contact" className="section anchor-section">

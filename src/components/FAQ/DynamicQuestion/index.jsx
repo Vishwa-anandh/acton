@@ -68,7 +68,7 @@ export const FAQList = [
         The address is Acton Boxbrough Regional High School,36 Charter Rd,Acton,MA 01720
         <br />
         <br />
-        <span className={`text-primary`}>
+        <span className="text-maroon">
           We conduct online classes if there are issues like Covid-19 or snow days. We will promptly communicate to the parents when there is a change.
         </span>
       </>
