@@ -14,7 +14,7 @@ const RIBBON_PATHS = [
 const GOLD = ["#f8e08a", "#f0c95a", "#e8b84a", "#d4a537", "#fff2b8", "#c9982f"];
 // Where the round seal sits inside the 1400px artwork (measured from the image).
 const SEAL = { cx: 0.589, cy: 0.467, d: 0.6186 };
-const LAND_MS = 625;
+const LAND_MS = 1250;
 const CLEANUP_MS = 4500;
 
 function shouldPlay() {
@@ -121,24 +121,22 @@ export default function Intro() {
         s.className = "ai-sp";
         const a = Math.random() * 6.28;
         const d = sp * (0.4 + Math.random());
-        s.style.cssText = `left:${x}%;top:${y}%;--dx:${Math.cos(a) * d}px;--dy:${Math.sin(a) * d}px;animation-delay:${Math.random() * 0.125}s`;
+        s.style.cssText = `left:${x}%;top:${y}%;--dx:${Math.cos(a) * d}px;--dy:${Math.sin(a) * d}px;animation-delay:${Math.random() * 0.25}s`;
         inner.appendChild(s);
-        timers.push(setTimeout(() => s.remove(), 800));
+        timers.push(setTimeout(() => s.remove(), 1600));
       }
     };
 
     const tick = () => {
       cc.clearRect(0, 0, cv.width, cv.height);
       particles = particles.filter((p) => {
-        for (let step = 0; step < 2; step++) {
-          p.vy += 0.32 * dpr;
-          p.vx *= 0.992;
-          p.vy *= 0.992;
-          p.x += p.vx;
-          p.y += p.vy;
-          p.r += p.vr;
-          p.t += 0.18;
-        }
+        p.vy += 0.32 * dpr;
+        p.vx *= 0.992;
+        p.vy *= 0.992;
+        p.x += p.vx;
+        p.y += p.vy;
+        p.r += p.vr;
+        p.t += 0.18;
         if (p.y > cv.height + 60) return false;
         cc.save();
         cc.translate(p.x, p.y);
@@ -181,18 +179,18 @@ export default function Intro() {
       const pw = Math.max(14, H * 0.028);
       fire(W * 0.04, H, 110, -Math.PI / 3, 0.55, pw);
       fire(W * 0.96, H, 110, (-2 * Math.PI) / 3, 0.55, pw);
-      timers.push(setTimeout(() => fire(W * 0.5, H, 120, -Math.PI / 2, 1.1, pw * 1.1), 225));
+      timers.push(setTimeout(() => fire(W * 0.5, H, 120, -Math.PI / 2, 1.1, pw * 1.1), 450));
       timers.push(
         setTimeout(() => {
           fire(W * 0.15, H, 80, -1.25, 0.6, pw);
           fire(W * 0.85, H, 80, -1.9, 0.6, pw);
-        }, 475)
+        }, 950)
       );
       for (let k = 0; k < 14; k++) {
         timers.push(
           setTimeout(() => {
             for (let i = 0; i < 8; i++) fire(Math.random() * W, -20, 1, Math.PI / 2, 0.5, pw * 0.12);
-          }, 300 + k * 75)
+          }, 600 + k * 150)
         );
       }
     };
@@ -232,11 +230,11 @@ export default function Intro() {
       at(CLEANUP_MS, () => setGone(true));
     };
 
-    at(1200, () => burst(59, 46, 18, 170));
-    at(2175, () => burst(30, 78, 12, 90));
-    at(2500, () => burst(50, 50, 24, 230));
-    at(2800, celebrate);
-    at(4600, finish);
+    at(2400, () => burst(59, 46, 18, 170));
+    at(4350, () => burst(30, 78, 12, 90));
+    at(5000, () => burst(50, 50, 24, 230));
+    at(5600, celebrate);
+    at(9200, finish);
 
     const skipBtn = $(".ai-skip");
     skipBtn.addEventListener("click", finish);
@@ -289,13 +287,13 @@ export default function Intro() {
                     d={d}
                   />
                   <circle r="14" fill="#fff" filter="url(#ai-gl)" opacity="0">
-                    <animateMotion dur=".85s" begin=".05s" fill="freeze" path={d} />
+                    <animateMotion dur="1.7s" begin=".1s" fill="freeze" path={d} />
                     <animate
                       attributeName="opacity"
                       values="0;1;1;0"
                       keyTimes="0;.02;.94;1"
-                      dur=".85s"
-                      begin=".05s"
+                      dur="1.7s"
+                      begin=".1s"
                       fill="freeze"
                     />
                   </circle>
