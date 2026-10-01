@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./app";
 import { BrowserRouter } from "react-router-dom";
-import "bootstrap-icons/font/bootstrap-icons.css";
+import "./app/bootstrap-icons-subset.css";
 // Must be the last CSS import: see src/app/tailwind-utilities.scss
 import "./app/tailwind-utilities.scss";
 // Handle stale build chunk errors after new deployments automatically
